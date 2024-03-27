@@ -56,14 +56,26 @@ export const kuberConcepts = {
     {
       text: "Pod",
       link: "pod",
+      collapsed: true,
       items: [
         {
           text: "Pods with YAML",
           link: "pod-yaml",
         },
         {
-          text: "Demo - Pods with YAML",
+          text: "Practice - Pods",
           link: "pod-yaml-demo",
+        },
+      ],
+    },
+    {
+      text: "ReplicaSet",
+      link: "replica-set",
+      collapsed: true,
+      items: [
+        {
+          text: "Practice - ReplicaSet",
+          link: "replicaset-practice",
         },
       ],
     },

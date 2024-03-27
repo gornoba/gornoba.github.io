@@ -30,11 +30,6 @@
 - `kubectl run` 명령은 Pod를 생성하고 Docker 컨테이너 인스턴스를 배포함
 - `kubectl get pods` 명령을 사용하여 클러스터 내의 Pod 목록을 확인할 수 있음
 
-## 결론
-
-- 이 강의에서는 Kubernetes Pods의 기본 개념을 설명함
-- 사용자가 NGINX 웹 서버에 접근하는 방법 등은 추후 강의에서 다룰 예정임
-
 ## K8s Reference Docs:
 
 - https://kubernetes.io/docs/concepts/workloads/pods/pod/

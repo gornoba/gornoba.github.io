@@ -44,7 +44,7 @@ YAML 파일을 사용하여 Kubernetes 리소스를 정의하고 관리하는 �
 
 ## Kubernetes 작업 요약
 
-이 문서에서는 Kubernetes 시스템에서 다양한 작업을 수행하는 방법에 대해 설명합니다.
+[link](https://uklabs.kodekloud.com/topic/practice-test-pods-2/)
 
 ### 1. 시스템상의 Pod 수 확인
 
