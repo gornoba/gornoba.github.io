@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Hyunhoo ^^"
+  name: "Hyunhoo 😁"
   text: "Frontend, Backend, and DevOps Harmony"
   tagline: "Reach out to me at <span class='tagline-email'>gornoba@naver.com</span> for collaboration or inquiries."
   image:
