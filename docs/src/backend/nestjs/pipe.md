@@ -4,10 +4,10 @@
 
 ## pipe의 사용목적
 
-pipe의 사용목적은 2가지 입니다.
-
-1. validation
-2. transform
+- lifecycle에서 controller 직전인 5번쨰에 사용되게 됩니다.
+- pipe의 사용목적은 2가지 입니다.
+  1. validation
+  2. transform
 
 ## pipe의 사용
 

@@ -28,7 +28,8 @@ export const vitepressWrite = {
 
 export const vitepressIntroduction = {
   base: "/frontend/vitepress/",
-  text: "Introduction ",
+  text: "Introduction",
+  link: "/",
   collapsed: true,
   items: [
     {
