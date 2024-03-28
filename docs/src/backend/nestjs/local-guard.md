@@ -165,4 +165,4 @@ export class LoginModule {}
 ## 다음..
 
 다음으로는 cookie에 jwt(Json Web Token)을 넣어보는 과정을 해보도록 하죠!<br/>
-그래서 메뉴를 준비과정에 있던 [Cookie Parser](http://localhost:5173/backend/nestjs/cookie-parser)로 가봅시다~
+그래서 메뉴를 준비과정에 있던 [Cookie Parser](/backend/nestjs/cookie-parser)로 가봅시다~

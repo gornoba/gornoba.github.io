@@ -125,7 +125,7 @@ async login(@Req() req: Request): Promise<string> {
 
 ## JWT 토큰 쿠키에 넣기
 
-[Cookie Parser](http://localhost:5173/backend/nestjs/cookie-parser#%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB-%E1%84%83%E1%85%B1-jwt-%E1%84%90%E1%85%A9%E1%84%8F%E1%85%B3%E1%86%AB-%E1%84%8F%E1%85%AE%E1%84%8F%E1%85%B5%E1%84%8B%E1%85%A6-%E1%84%82%E1%85%A5%E1%87%82%E1%84%80%E1%85%B5)
+[Cookie Parser](/backend/nestjs/cookie-parser#%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB-%E1%84%83%E1%85%B1-jwt-%E1%84%90%E1%85%A9%E1%84%8F%E1%85%B3%E1%86%AB-%E1%84%8F%E1%85%AE%E1%84%8F%E1%85%B5%E1%84%8B%E1%85%A6-%E1%84%82%E1%85%A5%E1%87%82%E1%84%80%E1%85%B5)
 
 ## JWT Verify
 
