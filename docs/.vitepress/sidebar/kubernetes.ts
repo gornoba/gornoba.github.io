@@ -11,6 +11,10 @@ export const kuberIntroduction = {
           text: "Certified Kubernetes Administrator",
           link: "certified-kubernetes-administrator",
         },
+        {
+          text: "Tips",
+          link: "tips",
+        },
       ],
     },
   ],
@@ -76,6 +80,17 @@ export const kuberConcepts = {
         {
           text: "Practice - ReplicaSet",
           link: "replicaset-practice",
+        },
+      ],
+    },
+    {
+      text: "Deployment",
+      link: "deployment",
+      collapsed: true,
+      items: [
+        {
+          text: "Practice - Deployment",
+          link: "deployment-practice",
         },
       ],
     },
