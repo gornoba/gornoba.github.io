@@ -10,7 +10,7 @@
 - **상태 관리**: 인증된 사용자에 대한 정보를 관리하고, 이를 통해 인증된 사용자의 요청을 처리합니다.
 - **전략(Strategy)**: 다양한 인증 메커니즘을 구현하기 위한 방법입니다. Passport는 다양한 전략을 지원합니다.
 
-###필요한 패키지 설치
+## 필요한 패키지 설치
 
 ```sh
 npm install --save @nestjs/passport passport passport-local
@@ -156,8 +156,13 @@ export class LoginModule {}
 
 저는 vscode의 Thunder Client를 이용해서 `http:localhost:3000/api/login`으로 post 요청을 해보겠습니다.<br/>
 그럼 아래와 같이 request에 비밀번호가 빠진 user 정보를 받게 됩니다.
-![alt](/local-guard-01.png)
+![alt](/local-guard-01.png)<br/>
 비밀번호가 틀렸다면 아래와 같이 에러가 발생됩니다.
-![alt](/local-guard-02.png)
+![alt](/local-guard-02.png)<br/>
 아이디가 없다면 아래와 같은 에러가 발생합니다.
 ![alt](/local-guard-03.png)
+
+## 다음..
+
+다음으로는 cookie에 jwt(Json Web Token)을 넣어보는 과정을 해보도록 하죠!<br/>
+그래서 메뉴를 준비과정에 있던 [Cookie Parser](http://localhost:5173/backend/nestjs/cookie-parser)로 가봅시다~
