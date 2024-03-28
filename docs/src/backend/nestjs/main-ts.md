@@ -5,7 +5,7 @@ main.ts는 NestJs의 주된 설정을 하는 곳이라고 보면 됩니다.<br/>
 express를 사용해신 분들은 아시겠지만 port를 listen하거나 cors등의 설정을 하게 됩니다.<br/>
 저는 기존 코드를 좀 변형하여 class로 제작해보려고 합니다.<br/><br/>
 NestJs는 Express 뿐만 아니라 Fastify도 지원하는데 여기서는 Express 기준으로 코드를 제작하겠습니다.<br/>
-또한 ENV도 함꼐 올려 알아보시는데 쉽게 만들어보려고 합니다.
+또한 ENV도 함께 올려 알아보시는데 쉽게 만들어보려고 합니다.
 
 ## class로 코드 변경
 

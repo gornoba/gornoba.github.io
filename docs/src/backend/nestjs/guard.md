@@ -63,7 +63,7 @@ export class HeaderGuard implements CanActivate {
 ```
 
 Guard는 CanActivate 인터페이스 구현합니다.<br/>
-여기서 [ExecutionContext(]https://docs.nestjs.com/fundamentals/execution-context) 관해서는 공식문서에 좀 더 자세히 나와 있습니다. <br/>
+여기서 [ExecutionContext](https://docs.nestjs.com/fundamentals/execution-context) 관해서는 공식문서에 좀 더 자세히 나와 있습니다. <br/>
 간단히 설명하자면 아래와 같습니다.
 
 ```typescript

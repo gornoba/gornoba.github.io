@@ -6,8 +6,8 @@
 
 - lifecycle에서 controller 직전인 5번쨰에 사용되게 됩니다.
 - pipe의 사용목적은 2가지 입니다.
-  1. validation
-  2. transform
+  1. [validation](https://docs.nestjs.com/techniques/validation)
+  2. [transform](https://docs.nestjs.com/techniques/serialization#exclude-properties)
 
 ## pipe의 사용
 
