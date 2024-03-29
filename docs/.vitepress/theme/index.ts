@@ -1,9 +1,9 @@
 import DefaultTheme from "vitepress/theme";
-import LinkToTap from "../components/LinkToTap.vue";
+import LinkToTab from "../components/LinkToTab.vue";
 
 export default {
   ...DefaultTheme,
   enhanceApp: ({ app }) => {
-    app.component("LinkNewTab", LinkToTap);
+    app.component("LinkNewTab", LinkToTab);
   },
 };

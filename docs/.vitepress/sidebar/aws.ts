@@ -56,6 +56,15 @@ export const awsCodepipeline = {
   collapsed: true,
   items: [
     {
+      text: "Code Build",
+      base: "/aws/code-pipeline/code-build/",
+      collapsed: true,
+      items: [
+        { text: "환경변수", link: "env" },
+        { text: "buildspec.yaml", link: "buildspec" },
+      ],
+    },
+    {
       text: "Code Deploy",
       base: "/aws/code-pipeline/code-deploy/",
       collapsed: true,
@@ -73,7 +82,21 @@ export const awsIam = {
       text: "Access Management",
       base: "/aws/iam/access-management/",
       collapsed: true,
-      items: [{ text: "Role", link: "role" }],
+      items: [
+        { text: "사용자", link: "user" },
+        { text: "역할", link: "role" },
+        { text: "정책", link: "policy" },
+      ],
     },
+  ],
+};
+
+export const awsRoute53 = {
+  text: "Route 53",
+  base: "/aws/route53/",
+  collapsed: true,
+  items: [
+    { text: "호스팅 영역", link: "hosting" },
+    { text: "도메인 구입", link: "regist-domain" },
   ],
 };

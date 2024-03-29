@@ -26,7 +26,7 @@ ssh 접속을 위한 키 페어를 RSA, pem 파일로 생성합니다.
 보안그룹은 새롭게 생성하셔도 되고 기존 보안 그룹을 선택하셔도 됩니다.  
 인터넷에서 HTTPS 트래픽 허용를 체크할 경우 443포트의 트레픽이 허용됩니다.  
 인터넷에서 HTTP 트래픽 허용을 체크할 경우 80포트의 트래픽이 허용됩니다.  
-<LinkNewTab href="aws/vpc/virtual-private-cloud/create-vpc" text="링크"><template #header>따로 생성하시려면 </template>를 참조하세요.</LinkNewTab>
+<LinkNewTab href="/aws/vpc/virtual-private-cloud/create-vpc" text="링크"><template #header>따로 생성하시려면 </template>를 참조하세요.</LinkNewTab>
 
 ## 스토리지 구성
 

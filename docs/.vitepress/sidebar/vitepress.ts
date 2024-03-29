@@ -62,3 +62,15 @@ export const vitepressExpose = {
     },
   ],
 };
+
+export const vitepressCustom = {
+  base: "/frontend/vitepress/",
+  text: "Custom",
+  collapsed: true,
+  items: [
+    {
+      text: "Custom Component",
+      link: "custom-component",
+    },
+  ],
+};

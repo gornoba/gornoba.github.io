@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 defineProps({
   href: String,
   text: String,
@@ -6,7 +6,7 @@ defineProps({
 </script>
 
 <template>
-  <p style="margin-bottom: -16px !important; margin-top: -16px !important">
+  <p style="margin: -16px 0 !important">
     <slot name="header"></slot>
     <a :href="href" target="_blank">{{ text }}</a>
     <slot></slot>

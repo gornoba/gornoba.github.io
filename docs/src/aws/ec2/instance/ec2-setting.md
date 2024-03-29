@@ -128,6 +128,19 @@ docker run -d --name nginx --network [생성한 네트워크 이름] -p 80:80 -v
 
 <LinkNewTab href="/aws/code-pipeline/code-deploy/codedeploy-agent" text="CodeDeploy agent 설치" style="margin-top: 16px"></LinkNewTab>
 
-## Deploy를 위한 IAM 역할 생성
+## Code Deploy와 EC2의 연결을 위한 사용자 생성과 인증
+
+<LinkNewTab href="/aws/iam/access-management/user" text="Code Deploy와 EC2의 연결을 위한 사용자 생성과 인증" style="margin-top: 16px"></LinkNewTab><br/>
+EC2에 사용자 인증을 해줍니다.
+
+```sh
+sudo aws configure
+AWS Access Key ID [None]: [사용자 acceess key]
+AWS Secret Access Key [None]:LinkNewTab [사용자 secret access key]
+Default region name [None]: ap-northeast-2
+Default output format [None]: json
+```
+
+## Deploy를 위한 EC2 IAM 역할 생성
 
 <LinkNewTab href="/aws/iam/access-management/role#ec2-배포를-위한-역할-설정" text="EC2 배포를 위한 역할 설정" style="margin-top: 16px"></LinkNewTab>

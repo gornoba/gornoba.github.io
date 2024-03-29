@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress";
 import { kuberConcepts, kuberIntroduction } from "./sidebar/kubernetes";
 import {
+  vitepressCustom,
   vitepressExpose,
   vitepressIntroduction,
   vitepressWrite,
@@ -11,7 +12,14 @@ import {
   nestjsBasic,
 } from "./sidebar/nestjs";
 import { whoamiCompany, whoamiInto } from "./sidebar/whoami";
-import { awsCodepipeline, awsEc2, awsIam, awsVpc } from "./sidebar/aws";
+import {
+  awsCodepipeline,
+  awsEc2,
+  awsIam,
+  awsRoute53,
+  awsVpc,
+} from "./sidebar/aws";
+import { gcpNetworkService } from "./sidebar/gcp";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -68,7 +76,12 @@ export default defineConfig({
           {
             text: "VitePress",
             collapsed: true,
-            items: [vitepressIntroduction, vitepressWrite, vitepressExpose],
+            items: [
+              vitepressIntroduction,
+              vitepressWrite,
+              vitepressCustom,
+              vitepressExpose,
+            ],
           },
         ],
       },
@@ -98,11 +111,12 @@ export default defineConfig({
           {
             text: "AWS",
             collapsed: true,
-            items: [awsIam, awsEc2, awsVpc, awsCodepipeline],
+            items: [awsIam, awsEc2, awsVpc, awsCodepipeline, awsRoute53],
           },
           {
             text: "GCP",
             collapsed: true,
+            items: [gcpNetworkService],
           },
         ],
       },
