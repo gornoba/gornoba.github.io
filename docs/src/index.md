@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 소개글..
-      link: /whoiam/introduction
+      link: /whoiam/intro/introduction
 
 features:
   - icon:

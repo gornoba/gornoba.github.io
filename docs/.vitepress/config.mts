@@ -10,6 +10,8 @@ import {
   nestjsPreparation,
   nestjsBasic,
 } from "./sidebar/nestjs";
+import { whoamiCompany, whoamiInto } from "./sidebar/whoami";
+import { awsCodepipeline, awsEc2, awsIam, awsVpc } from "./sidebar/aws";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -58,7 +60,7 @@ export default defineConfig({
       {
         text: "Who am I?",
         base: "/whoiam/",
-        items: [{ text: "소개글", link: "introduction" }],
+        items: [whoamiInto, whoamiCompany],
       },
       {
         text: "Frontend",
@@ -87,6 +89,29 @@ export default defineConfig({
             text: "Kubernetes",
             collapsed: true,
             items: [kuberIntroduction, kuberConcepts],
+          },
+        ],
+      },
+      {
+        text: "Cloud",
+        items: [
+          {
+            text: "AWS",
+            collapsed: true,
+            items: [awsIam, awsEc2, awsVpc, awsCodepipeline],
+          },
+          {
+            text: "GCP",
+            collapsed: true,
+          },
+        ],
+      },
+      {
+        text: "Database",
+        items: [
+          {
+            text: "PostgreSQL",
+            collapsed: true,
           },
         ],
       },
