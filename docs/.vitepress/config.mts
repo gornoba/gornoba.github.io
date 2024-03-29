@@ -62,6 +62,19 @@ export default defineConfig({
           },
         ],
       },
+      {
+        text: "Cloud",
+        items: [
+          {
+            text: "AWS",
+            link: "/aws/",
+          },
+          {
+            text: "GCP",
+            link: "/gcp/",
+          },
+        ],
+      },
     ],
 
     sidebar: [
@@ -109,12 +122,16 @@ export default defineConfig({
         text: "Cloud",
         items: [
           {
+            base: "/aws",
             text: "AWS",
+            link: "/",
             collapsed: true,
             items: [awsIam, awsEc2, awsVpc, awsCodepipeline, awsRoute53],
           },
           {
+            base: "/gcp",
             text: "GCP",
+            link: "/",
             collapsed: true,
             items: [gcpNetworkService],
           },

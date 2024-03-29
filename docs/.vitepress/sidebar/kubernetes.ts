@@ -94,5 +94,28 @@ export const kuberConcepts = {
         },
       ],
     },
+    {
+      text: "Service",
+      link: "service",
+      collapsed: true,
+      items: [
+        {
+          text: "nodePort",
+          link: "nodeport",
+        },
+        {
+          text: "ClusterIP",
+          link: "clusterip",
+        },
+        {
+          text: "LoadBalancer",
+          link: "loadbalancer",
+        },
+        {
+          text: "Practice - Service",
+          link: "service-practice",
+        },
+      ],
+    },
   ],
 };
