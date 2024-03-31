@@ -54,3 +54,8 @@ kubectl create service clusterip backend --tcp=80:80 --dry-run=client -o yaml > 
 - ClusterIP Servie는 클러스터 내 Pod 간 안정적인 통신을 위한 중요한 구성 요소입니다.
 - Servie는 Pod가 속한 그룹에 대한 단일 접근점을 제공하며, Servie 이름 또는 클러스터 IP를 통해 접근할 수 있습니다.
 - YAML 파일과 `kubectl` CLI를 사용하여 Servie를 쉽게 생성하고 관리할 수 있습니다.
+
+## K8s Reference Docs:
+
+https://kubernetes.io/docs/concepts/services-networking/service/
+https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/

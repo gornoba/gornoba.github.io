@@ -70,3 +70,7 @@ kubectl create service nodeport my-webapp-service --tcp=80:80 --node-port=30008 
 - 포드의 웹 서버에 대한 외부 액세스를 가능하게 하는 서비스 유형
 - 포드, 서비스, 노드에 걸쳐 3개의 포트가 관련됨
 - 서비스 정의 파일을 통해 생성되며, `type`, `ports`, `selector` 등의 필드를 포함
+
+## K8s Reference Docs:
+
+https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/

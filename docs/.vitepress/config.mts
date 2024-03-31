@@ -1,5 +1,9 @@
 import { defineConfig } from "vitepress";
-import { kuberConcepts, kuberIntroduction } from "./sidebar/kubernetes";
+import {
+  kuberConcepts,
+  kuberIntroduction,
+  kuberScheduling,
+} from "./sidebar/kubernetes";
 import {
   vitepressCustom,
   vitepressExpose,
@@ -114,7 +118,7 @@ export default defineConfig({
           {
             text: "Kubernetes",
             collapsed: true,
-            items: [kuberIntroduction, kuberConcepts],
+            items: [kuberIntroduction, kuberConcepts, kuberScheduling],
           },
         ],
       },

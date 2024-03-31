@@ -77,3 +77,10 @@ Deployment는 애플리케이션의 인스턴스 수를 쉽게 조절할 수 있
 ## 결론
 
 Kubernetes의 Deployment는 복잡한 애플리케이션 배포 요구사항을 충족시키기 위한 강력한 도구입니다. 롤링 업데이트, 롤백, 변경 관리 기능을 통해 개발자와 운영팀은 애플리케이션의 릴리스 및 운영을 보다 안정적이고 효율적으로 수행할 수 있습니다.
+
+## K8s Reference Docs:
+
+https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/
+https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/
+https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/

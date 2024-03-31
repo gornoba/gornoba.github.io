@@ -46,7 +46,7 @@ kubectl create service loadbalancer my-webapp-loadbalancer --tcp=80:80 --dry-run
 
 ## AWS에서의 ELB 유형지정
 
-###ELB 유형 선택 시 고려사항
+### ELB 유형 선택 시 고려사항
 
 - CLB (Classic Load Balancer): 초기 ELB 유형으로, 기본적인 로드 밸런싱 기능을 제공합니다. Layer 4(TCP)와 Layer 7(HTTP/HTTPS) 트래픽 로드 밸런싱을 지원합니다. 단순한 사용 사례에 적합합니다. 특별히 어노테이션을 추가하지 않아도 기본적으로 CLB가 생성됩니다.
 

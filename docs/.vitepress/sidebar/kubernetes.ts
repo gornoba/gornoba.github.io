@@ -1,5 +1,5 @@
 export const kuberIntroduction = {
-  base: "/devops/kubernetes/",
+  base: "/devops/kubernetes/certification/",
   text: "Introduction",
   collapsed: true,
   items: [
@@ -21,7 +21,7 @@ export const kuberIntroduction = {
 };
 
 export const kuberConcepts = {
-  base: "/devops/kubernetes/",
+  base: "/devops/kubernetes/core-concepts/",
   text: "Core Concepts",
   collapsed: true,
   items: [
@@ -117,5 +117,26 @@ export const kuberConcepts = {
         },
       ],
     },
+    {
+      text: "Namespace",
+      link: "namespace",
+      collapsed: true,
+      items: [
+        {
+          text: "Practice - Namespace",
+          link: "namespace-practice",
+        },
+      ],
+    },
+    {
+      text: "Imperative vs Declarative",
+      link: "imperative-vs-declarative",
+    },
   ],
+};
+
+export const kuberScheduling = {
+  base: "/devops/kubernetes/scheduling/",
+  text: "Scheduling",
+  collapsed: true,
 };

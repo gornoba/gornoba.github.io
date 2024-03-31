@@ -31,3 +31,7 @@ Kubernetes 네트워킹의 다양한 측면 중 외부 통신에 초점을 맞�
 ## 요약
 
 Kubernetes Services는 Pod의 추가 및 제거 시 자동으로 업데이트되며, 단일 노드, 단일 노드의 다중 Pod, 다중 노드의 다중 Pod 등 모든 경우에 동일하게 생성됩니다. Services는 일단 생성되면 일반적으로 추가 구성 변경 없이 유연하고 적응적입니다.
+
+## K8s Reference Docs:
+
+https://kubernetes.io/docs/concepts/services-networking/service/

@@ -105,3 +105,8 @@ type은 replicaset 혹은 replicacontroller
 Replica Set을 사용하면 Pod의 복제본을 정의하고 관리할 수 있으며, 이를 통해 애플리케이션의 확장성과 장애 복구 능력을 향상시킬 수 있습니다. 또한, Replica Set은 셀렉터를 사용하여 관리 대상 Pod를 더욱 세밀하게 식별할 수 있습니다.
 
 Kubernetes의 다양한 컨트롤러는 클러스터의 상태를 모니터링하고 원하는 상태를 유지하기 위해 필요한 조치를 취하는 핵심 구성요소입니다. 이러한 컨트롤러를 이해하고 사용하는 것은 Kubernetes를 효과적으로 운영하는 데 필수적입니다.
+
+## K8s Reference Docs:
+
+https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
+https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/
