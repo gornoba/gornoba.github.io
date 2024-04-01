@@ -28,8 +28,8 @@
 
 ## CodeDeploy를 위한 역할 설정
 
-`IAM - 역할 - 역할생성`
+[EC2 배포를 위한 역할 설정](/aws/iam/access-management/role#ec2-배포를-위한-역할-설정)과 동일하며  
+권한추가 부분만 아래의 권한을 추가해줍니다.
 
-## 권한정책 검색에 검색하여 추가할 권한
-
+- AmazonElasticContainerRegistryPublicPowerUser
 - AWSCodeDeployRole

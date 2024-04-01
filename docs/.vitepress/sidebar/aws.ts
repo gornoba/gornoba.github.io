@@ -61,14 +61,19 @@ export const awsCodepipeline = {
       collapsed: true,
       items: [
         { text: "환경변수", link: "env" },
-        { text: "buildspec.yaml", link: "buildspec" },
+        { text: "buildspec.yml", link: "buildspec" },
+        { text: "CodeBuild Create", link: "build-create" },
       ],
     },
     {
       text: "Code Deploy",
       base: "/aws/code-pipeline/code-deploy/",
       collapsed: true,
-      items: [{ text: "CodeDeploy Agent", link: "codedeploy-agent" }],
+      items: [
+        { text: "CodeDeploy Agent", link: "codedeploy-agent" },
+        { text: "appspec.yml", link: "appspec" },
+        { text: "CodeDeploy Create", link: "codedeploy-create" },
+      ],
     },
   ],
 };
@@ -98,5 +103,17 @@ export const awsRoute53 = {
   items: [
     { text: "호스팅 영역", link: "hosting" },
     { text: "도메인 구입", link: "regist-domain" },
+  ],
+};
+
+export const awsRds = {
+  text: "RDS",
+  base: "/aws/rds/",
+  collapsed: true,
+  items: [
+    {
+      text: "RDS 생성",
+      link: "create-rds",
+    },
   ],
 };

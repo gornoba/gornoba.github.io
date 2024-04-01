@@ -20,6 +20,7 @@ import {
   awsCodepipeline,
   awsEc2,
   awsIam,
+  awsRds,
   awsRoute53,
   awsVpc,
 } from "./sidebar/aws";
@@ -130,7 +131,14 @@ export default defineConfig({
             text: "AWS",
             link: "/",
             collapsed: true,
-            items: [awsIam, awsEc2, awsVpc, awsCodepipeline, awsRoute53],
+            items: [
+              awsIam,
+              awsEc2,
+              awsRds,
+              awsVpc,
+              awsCodepipeline,
+              awsRoute53,
+            ],
           },
           {
             base: "/gcp",
