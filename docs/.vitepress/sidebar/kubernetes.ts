@@ -139,4 +139,9 @@ export const kuberScheduling = {
   base: "/devops/kubernetes/scheduling/",
   text: "Scheduling",
   collapsed: true,
+  items: [
+    { text: "Manual Scheduling", link: "manual-scheduling" },
+    { text: "Labels and Selectors", link: "labels-and-selectors" },
+    { text: "Taints and Tolerations", link: "taints-and-tolerations" },
+  ],
 };
