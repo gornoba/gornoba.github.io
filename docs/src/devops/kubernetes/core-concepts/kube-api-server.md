@@ -1,6 +1,6 @@
-ver.service에 위치한 kube-apiserver 서비스를 확인하여 옵션을 검사
-
 # Kubernetes의 kube-apiserver 소개
+
+![](2024-04-02-19-34-46.png)
 
 ## kube-apiserver란?
 

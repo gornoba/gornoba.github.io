@@ -1,5 +1,6 @@
 # Kubernetes Deployment 소개
 
+![](2024-04-02-19-33-08.png)
 Deployment는 애플리케이션을 프로덕션 환경에 배포하는 데 필요한 다양한 기능을 제공합니다.
 
 ## Deployment의 주요 기능

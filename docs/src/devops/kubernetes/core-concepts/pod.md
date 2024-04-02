@@ -1,5 +1,7 @@
 # Kubernetes Pods
 
+![](2024-04-02-19-37-15.png)
+
 ## 사전 설정 가정
 
 - 애플리케이션이 이미 개발되어 Docker 이미지로 빌드되었으며, Docker Hub와 같은 Docker 저장소에 있어 Kubernetes가 이미지를 가져올 수 있음

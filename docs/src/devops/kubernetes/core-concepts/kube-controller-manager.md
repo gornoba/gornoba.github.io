@@ -1,5 +1,7 @@
 # Kube Controller Manager 소개
 
+![](2024-04-02-19-35-49.png)
+
 ## Kube Controller Manager란?
 
 Kube Controller Manager는 Kubernetes의 다양한 컨트롤러를 관리하는 컴포넌트입니다. 컨트롤러는 시스템 내의 다양한 구성 요소의 상태를 지속적으로 모니터링하며, 시스템을 원하는 상태로 유지하기 위해 작업을 수행합니다.
@@ -7,7 +9,9 @@ Kube Controller Manager는 Kubernetes의 다양한 컨트롤러를 관리하는 
 ### 컨트롤러의 예
 
 - **노드 컨트롤러(Node Controller)**: 노드의 상태를 모니터링하고, 필요한 조치를 취해 애플리케이션을 실행 상태로 유지합니다.
+  ![](2024-04-02-19-35-26.png)
 - **복제 컨트롤러(Replication Controller)**: Replica Set의 상태를 모니터링하고, 설정된 파드의 수를 유지합니다.
+  ![](2024-04-02-19-35-38.png)
 
 ## 컨트롤러의 기능
 

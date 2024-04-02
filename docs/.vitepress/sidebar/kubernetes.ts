@@ -143,5 +143,15 @@ export const kuberScheduling = {
     { text: "Manual Scheduling", link: "manual-scheduling" },
     { text: "Labels and Selectors", link: "labels-and-selectors" },
     { text: "Taints and Tolerations", link: "taints-and-tolerations" },
+    { text: "Node Selectors", link: "node-selectors" },
+    { text: "Node Affinity", link: "node-affinity" },
+    {
+      text: "Taints and Tolerations vs Node Affinity",
+      link: "taints-and-tolerations-vs-node-affinity",
+    },
+    {
+      text: "Resource Requirements and Limits",
+      link: "resource-requirements-and-limits",
+    },
   ],
 };

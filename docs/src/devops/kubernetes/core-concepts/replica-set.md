@@ -1,5 +1,6 @@
 # Kubernetes 컨트롤러 소개
 
+![](2024-04-02-19-38-04.png)
 Kubernetes의 핵심 구성 요소인 컨트롤러에 대해 알아봅니다. 특히, 복제 컨트롤러(Replication Controller)에 초점을 맞춥니다.
 
 ## 컨트롤러란?

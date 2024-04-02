@@ -1,5 +1,7 @@
 # Kubernetes Services
 
+![](2024-04-02-19-39-07.png)
+
 ## Kubernetes Services란?
 
 Kubernetes Services는 애플리케이션 내부 및 외부의 다양한 컴포넌트 간의 통신을 가능하게 합니다. 이를 통해 애플리케이션들을 서로 또는 사용자와 연결하는 데 도움이 됩니다.
