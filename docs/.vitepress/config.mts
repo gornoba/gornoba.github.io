@@ -66,7 +66,7 @@ export default defineConfig({
         items: [
           {
             text: "Kubernetes",
-            link: "/devops/kubernetes/",
+            link: "/devops/kubernetes/core-concepts/cluster-architecture",
           },
         ],
       },
