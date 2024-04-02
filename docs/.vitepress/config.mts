@@ -14,6 +14,8 @@ import {
   nestjsIntroduction,
   nestjsPreparation,
   nestjsBasic,
+  nestjsTest,
+  nestjsApplied,
 } from "./sidebar/nestjs";
 import { whoamiCompany, whoamiInto } from "./sidebar/whoami";
 import {
@@ -25,6 +27,7 @@ import {
   awsVpc,
 } from "./sidebar/aws";
 import { gcpNetworkService } from "./sidebar/gcp";
+import { postgresBackup } from "./sidebar/postgres";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -109,7 +112,13 @@ export default defineConfig({
           {
             text: "NestJs",
             collapsed: true,
-            items: [nestjsIntroduction, nestjsPreparation, nestjsBasic],
+            items: [
+              nestjsIntroduction,
+              nestjsPreparation,
+              nestjsBasic,
+              nestjsTest,
+              nestjsApplied,
+            ],
           },
         ],
       },
@@ -155,6 +164,7 @@ export default defineConfig({
           {
             text: "PostgreSQL",
             collapsed: true,
+            items: [postgresBackup],
           },
         ],
       },

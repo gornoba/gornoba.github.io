@@ -35,3 +35,9 @@ AWS에도 Beanstalk라고 app engine과 비슷한 서비스가 있었으나 기�
   - api 연동하는 batch를 어떻게 변경하고 통합할 것인가?
 - [**네번째 과제**](/whoiam/company/gcp-to-aws/fourth-challenge)
   - 개인적인 과제로 사용자 체감속도 향상을 위해 express에서 fatify로 변경.
+
+## 후기
+
+이번에 GCP에서 AWS로 서비스를 이전하면서 많은 것을 알고 배웠던 것 같습니다.  
+잊을 뻔했는데 [DB Migration](/database/postgre/pg-dump)은 간단하게 pg_dump를 이용하니 금방되었습니다.  
+항상 뭔가 할 수록 더 배우고 싶고 하고 싶은 마음이 많이 드네요.

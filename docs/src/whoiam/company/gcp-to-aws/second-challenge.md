@@ -51,6 +51,125 @@ PM2는 많은 장점을 갖고 있는 프로세스 매니저 입니다.
 ### Docker 배포를 위한 코드 작성
 
 - [buildspec 작성](/aws/code-pipeline/code-build/build-create#buildspec-작성)하여 code build에서 docker image를 build하고 ECR에 push 해줍니다.
+- [appspec 작성](/aws/code-pipeline/code-deploy/codedeploy-create#appsepc-작성) 합니다. 저는 ApplicationStart hook을 이용하였습니다.
+- shell script의 코드 과정
+
+  1. Code Build에서 ECR에 push한 image의 name, imageUri를 가져옵니다.
+  2. ECR에 로그인하고 image를 가져옵니다.
+
+  3. 현재 배포중인 컨테이너의 이름을 확인합니다.
+
+  - port는 3000번과 4000번을 사용합니다.
+
+  4. 3000번을 사용중이라면 4000번으로 이름과 port를 변경하여 docker run 합니다.
+  5. docker log를 통하여 health check를 30초 동안 진행합니다.
+
+  - 만약 health check를 통과하지 못하면 에러를 발생시키고 새로 받은 컨테이너와 이미지를 삭제 합니다.
+
+  6. health check가 통과하면 nginx의 설정 파일을 변경하고 reload 합니다.
+  7. 기존 컨테이너와 이미지는 삭제합니다.
+     :::details 코드
+
+     ```sh
+     #!/bin/bash
+
+     # 변수 설정
+
+     name=$(jq -r '.name' /home/ec2-user/build/imagedefinitions.json)
+     imageUri=$(jq -r '.imageUri' /home/ec2-user/build/imagedefinitions.json)
+
+     if [ -z "$name" ] || [ -z "$imageUri" ]; then
+     echo "Error: Required environment variables are not set."
+     exit 1
+     fi
+
+     # ECR 로그인
+
+     aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin $imageUri
+     sudo chmod 666 /var/run/docker.sock
+
+     # Docker 이미지 가져오기
+
+     docker pull $imageUri
+     echo "Docker image pull success"
+
+     # 포트와 태그 결정
+
+     existing_container=$(docker ps | grep $name | awk '{print $NF}' | grep -E "$name-3000|$name-4000")
+     if echo $existing_container | grep -q "$name-3000"; then
+     new_port="4000:3000"
+     tag="$name-4000"
+     elif echo $existing_container | grep -q "$name-4000"; then
+     new_port="3000:3000"
+     tag="$name-3000"
+     else
+         new_port="3000:3000"
+         tag="$name-3000"
+     fi
+
+     # Docker 컨테이너 실행
+
+     if docker ps -a --filter "name=$tag" | grep -q "$tag"; then
+     docker rm $tag -f
+     echo "delete $tag"
+     fi
+     docker run -d --name $tag --network dev -p $new_port $imageUri
+
+     # 로그 모니터링 및 대기
+
+     start_time=$(date +%s)
+     timeout=30
+     found=0
+
+     while [ $(($(date +%s) - start_time)) -lt $timeout ]; do
+     if docker logs $tag 2>&1 | tail -1 | grep -q "localhost:3000"; then
+           found=1
+           break
+       fi
+       sleep 1
+       echo $(docker logs $tag 2>&1 | tail -1)
+       echo "Waiting for application to start just passed $(($(date +%s) - start_time)) seconds..."
+     done
+
+     if [ $found -eq 0 ]; then
+     echo "Error: Application did not start correctly."
+     docker rm -f $tag
+     docker rmi $imageUri
+     exit 1
+     else
+     echo "Container run success."
+     fi
+
+     # 설정 파일 업데이트
+
+     echo "Nginx conf exchaing $new_port"
+     if [[ $new_port == "4000:3000" ]]; then
+       sed -i "s/$name-3000/$name-4000/" /home/ec2-user/conf.d/default.conf
+     elif [[ $new_port == "3000:3000" ]]; then
+       sed -i "s/$name-4000/$name-3000/" /home/ec2-user/conf.d/default.conf
+     fi
+
+     # Nginx 컨테이너 내에서 Nginx 리로드
+
+     docker exec nginx nginx -s reload
+
+     # 기존 컨테이너 검색 및 삭제
+
+     if [ ! -z "$existing_container" ]; then
+     echo "existing_container $existing_container delete"
+     docker stop $existing_container
+     docker rm $existing_container
+     fi
+
+     # 태그 없는 이미지 삭제
+
+     docker images | grep '<none>' | awk '{print $3}' | xargs -r docker rmi
+     echo "<none> container rmi success"
+
+     echo "Deployment completed successfully."
+     ```
+
+     :::
 
 <FootNote num=1 text="PaaS" url="https://www.ibm.com/kr-ko/topics/paas"/>
 <FootNote num=2 text="IaC" url="https://www.redhat.com/ko/topics/automation/what-is-infrastructure-as-code-iac"/>

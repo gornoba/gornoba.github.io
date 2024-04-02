@@ -138,3 +138,44 @@ export const nestjsBasic = {
     },
   ],
 };
+
+export const nestjsTest = {
+  base: "/backend/nestjs/test/",
+  text: "Test",
+  collapsed: true,
+  items: [
+    {
+      text: "Unit Test",
+      link: "unit-test",
+      collapsed: true,
+      items: [
+        {
+          text: "Jest",
+          collapsed: true,
+          items: [
+            { text: "Getting Started", link: "jest-getting-started" },
+            { text: "Expect", link: "expect" },
+            { text: "Setup and Teardown", link: "setup-teardown" },
+            { text: "Mock", link: "mock" },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+export const nestjsApplied = {
+  text: "Applied",
+  collapsed: true,
+  base: "/backend/nestjs/applied/",
+  items: [
+    {
+      text: "Commander",
+      link: "commander",
+    },
+    {
+      text: "Fastify",
+      link: "fastify",
+    },
+  ],
+};
