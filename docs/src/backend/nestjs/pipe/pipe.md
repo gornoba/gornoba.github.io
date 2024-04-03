@@ -12,8 +12,18 @@
 ## pipe의 사용
 
 공식홈페이지에는 여러 사용방법이 나와 있는데 그 중에 dto와 데코레이터와 바인딩되는 방법을 사용할 예정입니다.<br/>
-대부분은 dto를 이용하게 되는데 class-validator와 class-transform를 이용하게 됩니다.<br/>
 NestJs에서 제공하는 ValidationPipe를 main.ts에 global로 설정하면 준비는 끝납니다.
+
+- dto를 사용할 경우 class-validator와 class-transform를 이용하게 됩니다.
+- 데코레이터와 바인딩되는 pipe의 종류
+  - ParseIntPipe: 입력 값을 정수로 변환합니다. 변환이 가능하지 않은 경우, 예외를 발생시킵니다.
+  - ParseFloatPipe: 부동소수점 숫자로 변환합니다. 변환이 불가능한 경우 예외를 발생시킵니다.
+  - ParseBoolPipe: 입력 값을 불리언 값으로 변환합니다. true, false, 1, 0 외의 값은 예외를 발생시킵니다.
+  - ParseArrayPipe: 입력 값을 배열로 변환합니다. 선택적으로, 배열 내 항목의 타입도 검사할 수 있습니다.
+  - ParseUUIDPipe: 입력 값을 UUID로 변환합니다. 유효하지 않은 UUID 형식인 경우 예외를 발생시킵니다.
+  - ParseEnumPipe: 입력 값을 특정 열거형의 값으로 변환합니다. 입력 값이 해당 열거형에 정의된 값이 아닌 경우 예외를 발생시킵니다.
+  - DefaultValuePipe: 입력 값의 default를 지정할 수 있습니다. null 또는 undefined을 수신하면 예외를 발생시킵니다.
+  - ParseFilePipe: 파일 업로드 요청을 처리하고, 파일의 유효성을 검사합니다. 파일 크기 제한이나 MIME 타입 검사 등의 옵션을 설정할 수 있습니다.
 
 ## 구현
 
