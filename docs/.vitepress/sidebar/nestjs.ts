@@ -114,6 +114,7 @@ export const nestjsBasic = {
           items: [
             { text: "Local Guard", link: "local-guard" },
             { text: "Jwt Guard", link: "jwt-guard" },
+            { text: "Session Guard", link: "session-guard" },
             { text: "Roles Guard", link: "roles-guard" },
           ],
         },
