@@ -41,7 +41,11 @@ export default defineConfig({
   sitemap: {
     hostname: "https://gornoba.github.io/",
   },
+  lastUpdated: true,
   themeConfig: {
+    search: {
+      provider: "local",
+    },
     nav: [
       { text: "Home", link: "/" },
       {
