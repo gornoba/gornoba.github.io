@@ -38,8 +38,18 @@ export default defineConfig({
   srcDir: "src",
   base: "/",
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+  vite: {
+    build: {
+      chunkSizeWarningLimit: 1000,
+    },
+  },
   sitemap: {
     hostname: "https://gornoba.github.io/",
+  },
+  markdown: {
+    image: {
+      lazyLoading: true,
+    },
   },
   lastUpdated: true,
   themeConfig: {

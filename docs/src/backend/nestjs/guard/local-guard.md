@@ -118,7 +118,7 @@ export class LoginService {
 ```
 
 Nestjs에서는 다양한 경우의 excpeiton class를 제공합니다.<br/>
-[Exception Class](/backend/nestjs/exception-class)
+[Exception Class](/backend/nestjs/exception-filter/exception-class)
 
 ### login dto
 
@@ -165,4 +165,4 @@ export class LoginModule {}
 ## 다음..
 
 다음으로는 cookie에 jwt(Json Web Token)을 넣어보는 과정을 해보도록 하죠!<br/>
-그래서 메뉴를 준비과정에 있던 [Cookie Parser](/backend/nestjs/cookie-parser)로 가봅시다~
+그래서 메뉴를 준비과정에 있던 [Cookie Parser](/backend/nestjs/preparation/cookie-parser)로 가봅시다~
