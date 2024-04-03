@@ -72,7 +72,7 @@ export default defineConfig({
         items: [
           {
             text: "NestJs",
-            link: "/backend/nestjs/introduction",
+            link: "/backend/nestjs/introduction/introduction",
           },
         ],
       },
