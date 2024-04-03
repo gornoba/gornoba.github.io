@@ -28,6 +28,7 @@ import {
 } from "./sidebar/aws";
 import { gcpNetworkService } from "./sidebar/gcp";
 import { postgresBackup } from "./sidebar/postgres";
+import { dockerStart } from "./sidebar/docker";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -129,6 +130,11 @@ export default defineConfig({
             text: "Kubernetes",
             collapsed: true,
             items: [kuberIntroduction, kuberConcepts, kuberScheduling],
+          },
+          {
+            text: "Docker",
+            collapsed: true,
+            items: [dockerStart],
           },
         ],
       },
