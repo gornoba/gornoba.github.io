@@ -78,7 +78,7 @@ export class RolesGuard implements CanActivate {
 
 ### 참고
 
-[Excution Context](/nestjs/fundamentals/excution-context)
+[Excution Context](/backend/nestjs/fundamentals/excution-context)
 
 ### RolesGuard 전역 등록하기
 
