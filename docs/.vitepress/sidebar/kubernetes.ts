@@ -153,5 +153,13 @@ export const kuberScheduling = {
       text: "Resource Requirements and Limits",
       link: "resource-requirements-and-limits",
     },
+    {
+      text: "Editing Pods and Deployments",
+      link: "editing-pods-and-deployments",
+    },
+    {
+      text: "DemonSet",
+      link: "daemonset",
+    },
   ],
 };
