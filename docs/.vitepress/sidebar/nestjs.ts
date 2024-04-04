@@ -115,7 +115,16 @@ export const nestjsBasic = {
             { text: "Local Guard", link: "local-guard" },
             { text: "Jwt Guard", link: "jwt-guard" },
             { text: "Session Guard", link: "session-guard" },
-            { text: "Roles Guard", link: "roles-guard" },
+            {
+              text: "Roles Guard - RBAC",
+              link: "roles-guard-rbac",
+              collapsed: true,
+            },
+            {
+              text: "Roles Guard - PoliciesGuard",
+              link: "roles-policies-guard",
+              collapsed: true,
+            },
           ],
         },
         {
@@ -186,6 +195,22 @@ export const nestjsApplied = {
     {
       text: "Fastify",
       link: "fastify",
+    },
+    {
+      text: "RxJS",
+      link: "rxjs",
+    },
+  ],
+};
+
+export const nestjsFundamentals = {
+  base: "/backend/nestjs/fundamentals/",
+  text: "Fundamentals",
+  collapsed: true,
+  items: [
+    {
+      text: "Excution Context",
+      link: "excution-context",
     },
   ],
 };
