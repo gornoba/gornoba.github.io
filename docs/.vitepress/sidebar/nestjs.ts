@@ -136,7 +136,7 @@ export const nestjsBasic = {
     {
       base: "/backend/nestjs/provider/",
       text: "Provider",
-      link: "todo",
+      link: "provider",
     },
     {
       base: "/backend/nestjs/interceptor/",
@@ -211,6 +211,14 @@ export const nestjsFundamentals = {
     {
       text: "Excution Context",
       link: "excution-context",
+    },
+    {
+      text: "Injection Scope",
+      link: "injection-scope",
+    },
+    {
+      text: "Custom providers",
+      link: "custom-providers",
     },
   ],
 };
