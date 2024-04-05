@@ -175,3 +175,49 @@ export const kuberScheduling = {
     },
   ],
 };
+
+export const kuberLoggingAndMonitoring = {
+  base: "/devops/kubernetes/logging-and-monitoring/",
+  text: "Logging and Monitoring",
+  collapsed: true,
+  items: [
+    {
+      text: "Monitor Cluster Components",
+      link: "monitor-cluster-components",
+    },
+    {
+      text: "Managing Application Logs",
+      link: "managing-application-logs",
+    },
+  ],
+};
+
+export const kuberApplicationLifecycle = {
+  base: "/devops/kubernetes/application-lifecycle/",
+  text: "Application Lifecycle",
+  collapsed: true,
+  items: [
+    {
+      text: "Rolling Updates and Rollbacks",
+      link: "rolling-updates-and-rollbacks",
+    },
+    { text: "Configure Applications", link: "configure-applications" },
+    { text: "Commands", link: "commands" },
+    { text: "Commands and Arguments", link: "commands-and-arguments" },
+    {
+      text: "Configure Environment Variables in Applications",
+      link: "configure-environment-variables",
+    },
+    {
+      text: "Configuer ConfigMaps in Applications",
+      link: "configure-configmaps",
+    },
+    { text: "Configure Secrets in Applications", link: "configure-secrets" },
+    {
+      text: "Demo: Encrypting Secrets Data at Rest",
+      link: "encrypting-secrets-data-at-rest",
+    },
+    { text: "Multi Container Pods", link: "multi-container-pods" },
+    { text: "Init Containers", link: "init-containers" },
+  ],
+};

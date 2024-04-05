@@ -1,7 +1,9 @@
 import { defineConfig } from "vitepress";
 import {
+  kuberApplicationLifecycle,
   kuberConcepts,
   kuberIntroduction,
+  kuberLoggingAndMonitoring,
   kuberScheduling,
 } from "./sidebar/kubernetes";
 import {
@@ -145,7 +147,13 @@ export default defineConfig({
           {
             text: "Kubernetes",
             collapsed: true,
-            items: [kuberIntroduction, kuberConcepts, kuberScheduling],
+            items: [
+              kuberIntroduction,
+              kuberConcepts,
+              kuberScheduling,
+              kuberLoggingAndMonitoring,
+              kuberApplicationLifecycle,
+            ],
           },
           {
             text: "Docker",
