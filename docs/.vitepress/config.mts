@@ -32,6 +32,7 @@ import {
 import { gcpNetworkService } from "./sidebar/gcp";
 import { postgresBackup } from "./sidebar/postgres";
 import { dockerStart } from "./sidebar/docker";
+import { winyearend } from "./sidebar/project";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -108,6 +109,11 @@ export default defineConfig({
         text: "Who am I?",
         base: "/whoiam/",
         items: [whoamiInto, whoamiCompany],
+      },
+      {
+        text: "개인 프로젝트",
+        base: "/project/",
+        items: [winyearend],
       },
       {
         text: "Frontend",
