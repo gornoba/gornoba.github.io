@@ -161,5 +161,17 @@ export const kuberScheduling = {
       text: "DemonSet",
       link: "daemonset",
     },
+    {
+      text: "Static Pods",
+      link: "static-pods",
+    },
+    {
+      text: "Multiple Schedulers",
+      link: "multiple-schedulers",
+    },
+    {
+      text: "Configuring Kubernetes Schedulers",
+      link: "configuring-kubernetes-schedulers",
+    },
   ],
 };
