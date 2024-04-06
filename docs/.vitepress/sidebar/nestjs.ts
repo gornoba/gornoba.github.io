@@ -141,7 +141,7 @@ export const nestjsBasic = {
     {
       base: "/backend/nestjs/interceptor/",
       text: "Interceptor",
-      link: "todo",
+      link: "interceptor",
     },
     {
       base: "/backend/nestjs/exception-filter/",

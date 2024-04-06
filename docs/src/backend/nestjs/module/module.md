@@ -38,7 +38,7 @@ TypeScript의 실험적 기능이지만, NestJS는 이를 활용하여 모듈성
   - NestJs에서 지원하는 Library를 import 할 수 있습니다. ex) ConfigModule
   - 다른 module에서 export한 provider를 사용하기 위해 해당 module을 import 할 수 있습니다.
 - controllers
-  - lifecycle에서 보면 6번째에 위치한 컨트롤러 입니다.
+  - [lifecycle](/backend/nestjs/preparation/lifecycle)에서 보면 6번째에 위치한 컨트롤러 입니다.
   - RestAPI의 경우 route가 위치하게 되면 인스턴스화 하게 됩니다.
 - providers
   - 보통은 service가 이곳에 위치하게 됩니다.

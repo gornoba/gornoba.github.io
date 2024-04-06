@@ -201,7 +201,6 @@ export const kuberApplicationLifecycle = {
       text: "Rolling Updates and Rollbacks",
       link: "rolling-updates-and-rollbacks",
     },
-    { text: "Configure Applications", link: "configure-applications" },
     { text: "Commands", link: "commands" },
     { text: "Commands and Arguments", link: "commands-and-arguments" },
     {

@@ -2,7 +2,7 @@
 
 ## Guard의 역할
 
-Guard는 lifecycle에서 middleware 다음인 3번쨰에 위치 합니다.<br/>
+Guard는 [lifecycle](/backend/nestjs/preparation/lifecycle)에서 middleware 다음인 3번쨰에 위치 합니다.<br/>
 사용자가 요청을 보냈을 때 사용자가 인증된 요청을 보냈는지 확인해야할 필요가 있습니다.<br/>
 그래서 api를 요청할 때 토큰을 보내거나 로그인을 하거나 합니다.<br/>
 우리는 api를 요청한다고 가정하고 header에 authorization에 Bearer hellow가 있는지 확인해보겠습니다.
