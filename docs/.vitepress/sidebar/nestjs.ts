@@ -146,7 +146,7 @@ export const nestjsBasic = {
     {
       base: "/backend/nestjs/exception-filter/",
       text: "Exception Filter",
-      link: "todo",
+      link: "exception-filter",
       collapsed: true,
       items: [{ text: "Exception Class", link: "exception-class" }],
     },
