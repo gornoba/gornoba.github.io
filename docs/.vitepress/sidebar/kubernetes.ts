@@ -213,7 +213,7 @@ export const kuberApplicationLifecycle = {
     },
     { text: "Configure Secrets in Applications", link: "configure-secrets" },
     {
-      text: "Demo: Encrypting Secrets Data at Rest",
+      text: "Encrypting Secrets Data at Rest",
       link: "encrypting-secrets-data-at-rest",
     },
     { text: "Multi Container Pods", link: "multi-container-pods" },
