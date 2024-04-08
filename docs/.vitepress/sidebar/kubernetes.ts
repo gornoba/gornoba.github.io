@@ -220,3 +220,18 @@ export const kuberApplicationLifecycle = {
     { text: "Init Containers", link: "init-containers" },
   ],
 };
+
+export const kuberClusterMaintenance = {
+  base: "/devops/kubernetes/cluster-maintenance/",
+  text: "Cluster Maintenance",
+  collapsed: true,
+  items: [
+    { text: "OS Upgrades", link: "os-upgrades" },
+    {
+      text: "Kubernetes Software Versions",
+      link: "kubernetes-software-versions",
+    },
+    { text: "Cluster Upgrede Process", link: "cluster-upgrade-process" },
+    { text: "Backup and Restore Methods", link: "backup-and-restore-methods" },
+  ],
+};

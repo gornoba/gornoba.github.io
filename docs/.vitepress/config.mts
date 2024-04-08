@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress";
 import {
   kuberApplicationLifecycle,
+  kuberClusterMaintenance,
   kuberConcepts,
   kuberIntroduction,
   kuberLoggingAndMonitoring,
@@ -172,6 +173,7 @@ export default defineConfig({
               kuberScheduling,
               kuberLoggingAndMonitoring,
               kuberApplicationLifecycle,
+              kuberClusterMaintenance,
             ],
           },
           {
