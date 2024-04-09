@@ -235,3 +235,37 @@ export const kuberClusterMaintenance = {
     { text: "Backup and Restore Methods", link: "backup-and-restore-methods" },
   ],
 };
+
+export const kuberSecurity = {
+  base: "/devops/kubernetes/security/",
+  text: "Security",
+  collapsed: true,
+  items: [
+    {
+      text: "Kubernetes Security Primitives",
+      link: "kubernetes-security-primitives",
+    },
+    { text: "Authentication", link: "authentication" },
+    { text: "TLS Basics", link: "tls-basics" },
+    { text: "TLS in Kubernetes", link: "tls-in-kubernetes" },
+    { text: "View Certificate Details", link: "view-certificate-details" },
+    { text: "Certificate API", link: "certificate-api" },
+    { text: "Kubeconfig", link: "kubeconfig" },
+    { text: "API Groups", link: "api-groups" },
+    { text: "Authorization", link: "authorization" },
+    { text: "Role Based Access Control", link: "role-based-access-control" },
+    {
+      text: "Cluster Roles and Role Bindings",
+      link: "cluster-roles-and-role-bindings",
+    },
+    { text: "Service Accounts", link: "service-accounts" },
+    { text: "Image Security", link: "image-security" },
+    { text: "Pre-requisite - Security in Docker", link: "security-in-docker" },
+    { text: "Security Contexts", link: "security-contexts" },
+    { text: "Network Policy", link: "network-policy" },
+    {
+      text: "Developing network policies",
+      link: "developing-network-policies",
+    },
+  ],
+};

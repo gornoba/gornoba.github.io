@@ -6,6 +6,7 @@ import {
   kuberIntroduction,
   kuberLoggingAndMonitoring,
   kuberScheduling,
+  kuberSecurity,
 } from "./sidebar/kubernetes";
 import {
   vitepressCustom,
@@ -174,6 +175,7 @@ export default defineConfig({
               kuberLoggingAndMonitoring,
               kuberApplicationLifecycle,
               kuberClusterMaintenance,
+              kuberSecurity,
             ],
           },
           {
