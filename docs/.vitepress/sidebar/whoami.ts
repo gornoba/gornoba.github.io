@@ -6,12 +6,13 @@ export const whoamiInto = {
 };
 
 export const whoamiCompany = {
+  base: "/whoiam/company/",
   text: "개발생활",
-  base: "/whoiam/company/gcp-to-aws/",
   collapsed: true,
   items: [
     {
       text: "GCP에서 AWS로 서비스 이전",
+      base: "/whoiam/company/gcp-to-aws/",
       link: "gcp-to-aws",
       collapsed: true,
       items: [
@@ -20,6 +21,10 @@ export const whoamiCompany = {
         { text: "batch를 변경 및 통합", link: "third-challenge" },
         { text: "express에서 fatify 변경", link: "fourth-challenge" },
       ],
+    },
+    {
+      text: "NestJs에서 ORM Transaction에 관한 코드 반복",
+      link: "nestjs-orm-transaction",
     },
   ],
 };

@@ -153,7 +153,7 @@ export const nestjsBasic = {
     {
       base: "/backend/nestjs/middleware/",
       text: "Middleware",
-      link: "todo",
+      link: "middleware",
     },
   ],
 };
@@ -209,16 +209,36 @@ export const nestjsFundamentals = {
   collapsed: true,
   items: [
     {
-      text: "Excution Context",
-      link: "excution-context",
+      text: "Custom providers",
+      link: "custom-providers",
+    },
+    {
+      text: "Dynamic modules",
+      link: "dynamic-modules",
     },
     {
       text: "Injection Scope",
       link: "injection-scope",
     },
     {
-      text: "Custom providers",
-      link: "custom-providers",
+      text: "Circular dependency",
+      link: "circular-dependency",
+    },
+    {
+      text: "Module reference",
+      link: "module-reference",
+    },
+    {
+      text: "Lazy loading modules",
+      link: "lazy-loading-modules",
+    },
+    {
+      text: "Lifecycle Events",
+      link: "lifecycle-events",
+    },
+    {
+      text: "Excution Context",
+      link: "excution-context",
     },
   ],
 };
