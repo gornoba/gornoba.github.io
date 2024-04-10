@@ -248,6 +248,10 @@ export const kuberSecurity = {
     { text: "Authentication", link: "authentication" },
     { text: "TLS Basics", link: "tls-basics" },
     { text: "TLS in Kubernetes", link: "tls-in-kubernetes" },
+    {
+      text: "TLS in Kubernetes - Certificate Creation",
+      link: "tls-in-kubernetes-certificate-creation",
+    },
     { text: "View Certificate Details", link: "view-certificate-details" },
     { text: "Certificate API", link: "certificate-api" },
     { text: "Kubeconfig", link: "kubeconfig" },

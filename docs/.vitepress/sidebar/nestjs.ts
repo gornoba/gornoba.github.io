@@ -155,6 +155,12 @@ export const nestjsBasic = {
       text: "Middleware",
       link: "middleware",
     },
+    {
+      base: "/backend/nestjs/database/",
+      text: "Database",
+      collapsed: true,
+      items: [{ text: "TypeORM", link: "typeorm" }],
+    },
   ],
 };
 

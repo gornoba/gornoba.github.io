@@ -126,3 +126,7 @@ findOne(@Param('id', new ParseIntPipe()) id: number, @User() user: UsersDto) {
 이렇게 하면 단일 선언으로 네 개의 데코레이터를 모두 적용하는 효과가 있습니다.
 
 사용자 정의 데코레이터를 사용함으로써, NestJS 애플리케이션의 코드를 더욱 읽기 쉽고 관리하기 쉬운 형태로 만들 수 있습니다. 또한, 요청 객체에서 직접 속성을 추출하는 반복적인 작업을 줄이고, 보다 선언적인 방식으로 의도를 명확하게 표현할 수 있게 해줍니다.
+
+## referrence
+
+https://wikidocs.net/158481
