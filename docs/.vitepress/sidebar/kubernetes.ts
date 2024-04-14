@@ -271,5 +271,9 @@ export const kuberSecurity = {
       text: "Developing network policies",
       link: "developing-network-policies",
     },
+    {
+      text: "Kubectx and Kubens",
+      link: "kubectx-and-kubens",
+    },
   ],
 };
