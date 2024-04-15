@@ -159,7 +159,13 @@ export const nestjsBasic = {
       base: "/backend/nestjs/database/",
       text: "Database",
       collapsed: true,
-      items: [{ text: "TypeORM", link: "typeorm" }],
+      items: [
+        { text: "TypeORM", link: "typeorm" },
+        {
+          text: "TypeORM Relation",
+          link: "typeorm-relation",
+        },
+      ],
     },
   ],
 };

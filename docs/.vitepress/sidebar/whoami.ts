@@ -25,6 +25,7 @@ export const whoamiCompany = {
     {
       text: "NestJs에서 ORM Transaction에 관한 코드 반복",
       link: "nestjs-orm-transaction",
+      items: [{ text: "@toss/nestjs-aop", link: "toss-aop" }],
     },
   ],
 };
