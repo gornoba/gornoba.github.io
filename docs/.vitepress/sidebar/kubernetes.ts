@@ -277,3 +277,24 @@ export const kuberSecurity = {
     },
   ],
 };
+
+export const kubeStorage = {
+  base: "/devops/kubernetes/storage/",
+  text: "Storage",
+  collapsed: true,
+  items: [
+    { text: "Storage in Docker", link: "storage-in-docker" },
+    {
+      text: "Volume Driver Plugins in Docker",
+      link: "volume-driver-plugins-in-docker",
+    },
+    {
+      text: "Container Storage Interface",
+      link: "container-storage-interface",
+    },
+    { text: "Volumes", link: "volumes" },
+    { text: "Persistent Volumes", link: "persistent-volumes" },
+    { text: "Persistent Volume Claims", link: "persistent-volume-claims" },
+    { text: "Storage Class", link: "storage-class" },
+  ],
+};
