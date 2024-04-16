@@ -1,6 +1,6 @@
 # Docker 저장 드라이버와 볼륨 드라이버 플러그인
 
-이 강의에서는 Docker의 저장 드라이버와 볼륨 드라이버 플러그인의 역할에 대해 배웁니다. 저장 드라이버는 이미지와 컨테이너의 저장공간을 관리하는 반면, 볼륨 드라이버 플러그인은 데이터의 영속성을 보장하는 데 중요한 역할을 합니다.
+저장 드라이버는 이미지와 컨테이너의 저장공간을 관리하는 반면, 볼륨 드라이버 플러그인은 데이터의 영속성을 보장하는 데 중요한 역할을 합니다.
 
 ## 볼륨 드라이버 플러그인의 기능
 
@@ -22,7 +22,11 @@ AWS의 EBS를 사용하여 볼륨을 생성하고 컨테이너에 연결하는 �
 
 ```bash
 # REX-Ray EBS 볼륨 드라이버를 사용하여 볼륨 생성 및 컨테이너 실행
-docker run -it --volume-driver=rexray/ebs -v myvolume:/data busybox
+docker run -it \
+  --name mysql
+  --volume-driver rexray/ebs
+  --mount src=ebs-vol,target=/var/lib/mysql
+  mysql
 ```
 
 이 명령은 AWS EBS에서 `myvolume`이라는 볼륨을 생성하고, 이를 컨테이너의 `/data` 디렉토리에 마운트하여 실행합니다.
@@ -35,5 +39,5 @@ docker run -it --volume-driver=rexray/ebs -v myvolume:/data busybox
 
 ## Docker Reference Docs
 
-https://docs.docker.com/engine/extend/legacy_plugins/
+https://docs.docker.com/engine/extend/legacy_plugins/<br/>
 https://github.com/rexray/rexray

@@ -9,6 +9,7 @@
 PVC를 생성하기 위해 필요한 YAML 파일의 기본 구조는 다음과 같습니다.
 
 ```yaml
+# pvc-definition.yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -19,6 +20,20 @@ spec:
   resources:
     requests:
       storage: 500Mi
+```
+
+```yaml
+# pv-definition.yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-vol1
+spec:
+  accessModes: ["ReadWriteOnce"]
+  capacity:
+    storage: 1Gi
+  hostPath:
+    path: /tmp/data
 ```
 
 이 구조를 사용하여 `500Mi`의 스토리지를 요청하며, `ReadWriteOnce` 액세스 모드로 설정된 PVC를 생성합니다. 이 액세스 모드는 볼륨을 한 번에 하나의 노드에서만 읽고 쓸 수 있음을 의미합니다.
@@ -41,16 +56,8 @@ kubectl delete persistentvolumeclaim my-claim
 
 이 명령은 `my-claim` 이름의 PVC를 삭제합니다. 이와 관련된 PV의 처리는 PV의 정책에 따라 다르게 실행됩니다.
 
-## 실습
-
-이제 여러분은 PVC 생성, 조회, 바인딩 확인 및 삭제 등의 과정을 직접 실습해 볼 수 있습니다. 이를 통해 쿠버네티스에서의 스토리지 관리 방법을 더 잘 이해할 수 있을 것입니다.
-
-## 결론
-
-퍼시스턴트 볼륨 클레임을 통해 사용자는 필요한 스토리지를 효율적으로 요청하고 할당받을 수 있습니다.
-
 ## Kubernetes Persistent Volume Claims Reference Docs
 
-https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
-https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#persistentvolumeclaim-v1-core
+https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims<br/>
+https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#persistentvolumeclaim-v1-core<br/>
 https://docs.cloud.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingpersistentvolumeclaim.htm

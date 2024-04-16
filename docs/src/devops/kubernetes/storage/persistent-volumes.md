@@ -2,7 +2,8 @@
 
 ## 퍼시스턴트 볼륨이란?
 
-퍼시스턴트 볼륨(PV)은 쿠버네티스 클러스터에서 사용할 수 있는 스토리지의 집합을 관리자가 사전에 설정해두는 방식입니다. 이는 개별 포드 설정 파일 내에서 스토리지를 설정하는 대신, 중앙에서 스토리지를 관리하고 사용자가 필요에 따라 스토리지를 할당받을 수 있도록 합니다.
+퍼시스턴트 볼륨(PV)은 쿠버네티스 클러스터에서 사용할 수 있는 스토리지의 집합을 관리자가 사전에 설정해두는 방식입니다. 이는 개별 포드 설정 파일 내에서 스토리지를 설정하는 대신, 중앙에서 스토리지를 관리하고 사용자가 필요에 따라 스토리지를 할당받을 수 있도록 합니다.<br/><br/>
+![](2024-04-16-21-32-56.png)
 
 ### 퍼시스턴트 볼륨 생성 예시
 
@@ -20,6 +21,21 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: /data/pv-vol1
+```
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-vol1
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  awsElasticBlockStore:
+    volumeID: <volume-id>
+    fsType: ext4
 ```
 
 위 YAML 파일은 로컬 호스트의 `/data/pv-vol1` 디렉토리를 사용하여 1GB의 스토리지를 가진 퍼시스턴트 볼륨을 생성합니다. `ReadWriteOnce` 액세스 모드는 볼륨이 단일 노드에서 읽기 및 쓰기가 가능하다는 것을 의미합니다.
@@ -45,5 +61,5 @@ kubectl get persistentvolumes
 
 ## Kubernetes Persistent Volumes
 
-https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+https://kubernetes.io/docs/concepts/storage/persistent-volumes/<br/>
 https://portworx.com/tutorial-kubernetes-persistent-volumes/

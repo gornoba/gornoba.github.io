@@ -17,8 +17,8 @@ spec:
   containers:
     - name: random-number-container
       image: alpine
-      command: ["/bin/sh"]
-      args: ["-c", "echo $((1 + RANDOM % 100)) > /opt/number.out"]
+      command: ["/bin/sh", "-c"]
+      args: ["shuf -i 0-100 -n 1 >> /opt/number.out"]
       volumeMounts:
         - name: data-volume
           mountPath: /opt
@@ -30,6 +30,7 @@ spec:
 ```
 
 이 파드는 `/opt/number.out`에 임의의 숫자를 저장합니다. 호스트의 `/data` 디렉토리에 데이터를 저장하여, 파드가 삭제되어도 숫자가 유지됩니다.
+![](2024-04-16-21-28-31.png)
 
 ## 볼륨의 저장 옵션
 
@@ -71,9 +72,23 @@ spec:
 
 PVC는 사용자의 스토리지 요구 사항을 정의하며, 적절한 PV와 자동으로 연결됩니다.
 
+## Volume Storage Options
+
+- 볼륨에서 호스트경로 볼륨 유형은 단일 노드에서는 괜찮습니다. 멀티 노드 클러스터에는 사용하지 않는 것이 좋습니다.
+- 쿠버네티스에서는 NFS, GlusterFS, CephFS 또는 AWS EBS, Azure Disk 또는 Google의 퍼시스턴트 디스크와 같은 퍼블릭 클라우드 솔루션과 같은 여러 유형의 표준 스토리지 솔루션을 지원합니다.
+  ![](2024-04-16-19-56-55.png)
+
+```yaml
+volumes:
+  - name: data-volume
+    awsElasticBlockStore:
+      volumeID: <volume-id>
+      fsType: ext4
+```
+
 ## Kubernetes Volumes Reference Docs
 
-https://kubernetes.io/docs/concepts/storage/volumes/
-https://kubernetes.io/docs/tasks/configure-pod-container/configure-volume-storage/
-https://unofficial-kubernetes.readthedocs.io/en/latest/concepts/storage/volumes/
+https://kubernetes.io/docs/concepts/storage/volumes/<br/>
+https://kubernetes.io/docs/tasks/configure-pod-container/configure-volume-storage/<br/>
+https://unofficial-kubernetes.readthedocs.io/en/latest/concepts/storage/volumes/<br/>
 https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#volume-v1-core

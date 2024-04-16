@@ -1,5 +1,7 @@
 # 컨테이너 스토리지 인터페이스 (CSI)
 
+![](2024-04-16-19-46-38.png)
+
 ## CSI의 개요
 
 CSI는 컨테이너 오케스트레이션 시스템과 스토리지 시스템 간의 표준 인터페이스를 정의합니다. 이를 통해 개발자들은 쿠버네티스 소스 코드를 수정하지 않고도 다양한 스토리지 솔루션을 지원할 수 있습니다.
@@ -37,7 +39,7 @@ CSI는 쿠버네티스를 포함한 다양한 컨테이너 오케스트레이션
 
 ## Container Storage Interface
 
-https://github.com/container-storage-interface/spec
-https://kubernetes-csi.github.io/docs/
-http://mesos.apache.org/documentation/latest/csi/
+https://github.com/container-storage-interface/spec<br/>
+https://kubernetes-csi.github.io/docs/<br/>
+http://mesos.apache.org/documentation/latest/csi/<br/>
 https://www.nomadproject.io/docs/internals/plugins/csi#volume-lifecycle
