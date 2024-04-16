@@ -56,8 +56,29 @@ kubectl delete persistentvolumeclaim my-claim
 
 이 명령은 `my-claim` 이름의 PVC를 삭제합니다. 이와 관련된 PV의 처리는 PV의 정책에 따라 다르게 실행됩니다.
 
+## Pod, ReplicaSet, Deployment 적용
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+    - name: myfrontend
+      image: nginx
+      volumeMounts:
+        - mountPath: "/var/www/html"
+          name: mypd
+  volumes:
+    - name: mypd
+      persistentVolumeClaim:
+        claimName: myclaim
+```
+
 ## Kubernetes Persistent Volume Claims Reference Docs
 
 https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims<br/>
 https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#persistentvolumeclaim-v1-core<br/>
-https://docs.cloud.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingpersistentvolumeclaim.htm
+https://docs.cloud.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingpersistentvolumeclaim.htm<br/>
+https://kubernetes.io/docs/concepts/storage/persistent-volumes/#claims-as-volumes
