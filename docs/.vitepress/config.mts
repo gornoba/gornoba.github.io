@@ -70,6 +70,14 @@ export default defineConfig({
         text: "Frontend",
         items: [
           {
+            text: "Vue",
+            link: "/frontend/vue/",
+          },
+          // {
+          //   text: "Quasar",
+          //   link: "/frontend/quasar/",
+          // },
+          {
             text: "VitePress",
             link: "/frontend/vitepress/",
           },
