@@ -108,3 +108,41 @@ const customClassInstance = await this.moduleRef.create(CustomClass);
 ```
 
 이러한 기능들은 NestJS에서 제공하는 강력한 도구로, 애플리케이션의 유연성을 크게 높이고, 복잡한 의존성 관리 문제를 해결하는 데 도움을 줄 수 있습니다. ModuleRef를 사용함으로써, 애플리케이션의 모듈 간의 상호 작용을 보다 세밀하게 제어하고, 범위가 지정된 서비스의 생명 주기를 관리하며, 동적으로 서비스를 조작할 수 있게 됩니다.
+
+## 적용
+
+[Github Link](https://github.com/gornoba/nestjs-describe/tree/520083fd813b1bb00c404ce32821be4d717ea5a5)
+
+### module 변경
+
+- lib.module.ts에서 login.module이 imports 되고 있는 것을 삭제
+- login.module에서 순환참조를 해결하기 위해 `forwardRef`를 쓰고 있는 부분을 삭제하고 그냥 imports
+
+### local.strategy
+
+```typescript
+@Injectable()
+export class LocalStrategy
+  extends PassportStrategy(Strategy, "local")
+  implements OnModuleInit
+{
+  private loginService: LoginService;
+
+  constructor(private readonly moduleRef: ModuleRef) {
+    super({
+      usernameField: "username", // default: 'username'
+      passwordField: "password", // default: 'password'
+    });
+  }
+
+  onModuleInit() {
+    this.loginService = this.moduleRef.get(LoginService, { strict: false });
+  }
+
+  validate(username: string, password: string) {
+    return this.loginService.login(username, password);
+  }
+}
+```
+
+위와 같이 변경하면 loginservie를 불러와 쓸수 있게 됩니다.
