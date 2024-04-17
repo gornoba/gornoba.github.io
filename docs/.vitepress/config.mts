@@ -43,6 +43,11 @@ import {
   vueReusability,
   vueStart,
 } from "./sidebar/vue";
+import {
+  quasarOptionHelper,
+  quasarPlugin,
+  quasrStyleIdentity,
+} from "./sidebar/quasar";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -79,10 +84,10 @@ export default defineConfig({
             text: "Vue",
             link: "/frontend/vue/",
           },
-          // {
-          //   text: "Quasar",
-          //   link: "/frontend/quasar/",
-          // },
+          {
+            text: "Quasar",
+            link: "/frontend/quasar/start",
+          },
           {
             text: "VitePress",
             link: "/frontend/vitepress/",
@@ -152,7 +157,15 @@ export default defineConfig({
           {
             text: "Quasar",
             collapsed: true,
-            items: [],
+            items: [
+              {
+                text: "시작하기",
+                link: "/frontend/quasar/start",
+              },
+              quasarOptionHelper,
+              quasrStyleIdentity,
+              quasarPlugin,
+            ],
           },
           {
             text: "VitePress",
