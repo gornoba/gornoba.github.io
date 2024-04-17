@@ -36,7 +36,13 @@ import { gcpNetworkService } from "./sidebar/gcp";
 import { postgresBackup } from "./sidebar/postgres";
 import { dockerStart } from "./sidebar/docker";
 import { winyearend } from "./sidebar/project";
-import { vueComponents, vueEssentials, vueStart } from "./sidebar/vue";
+import {
+  vueComponents,
+  vueEssentials,
+  vueLibraries,
+  vueReusability,
+  vueStart,
+} from "./sidebar/vue";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -135,7 +141,13 @@ export default defineConfig({
             text: "Vue",
             link: "/",
             collapsed: true,
-            items: [vueStart, vueEssentials, vueComponents],
+            items: [
+              vueStart,
+              vueEssentials,
+              vueComponents,
+              vueReusability,
+              vueLibraries,
+            ],
           },
           {
             text: "Quasar",

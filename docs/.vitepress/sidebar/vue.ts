@@ -40,3 +40,25 @@ export const vueComponents = {
     { text: "Async Components", link: "async-components" },
   ],
 };
+
+export const vueReusability = {
+  text: "Reusability",
+  base: "/frontend/vue/reusability/",
+  collapsed: true,
+  items: [
+    { text: "Composables", link: "composables" },
+    { text: "Custom Directives", link: "custom-directives" },
+    { text: "Plugins", link: "plugins" },
+  ],
+};
+
+export const vueLibraries = {
+  text: "Libraries",
+  base: "/frontend/vue/libraries/",
+  collapsed: true,
+  items: [
+    { text: "Vue Router", link: "vue-router" },
+    { text: "Pinia", link: "pinia" },
+    { text: "Vue Use", link: "vue-use" },
+  ],
+};
