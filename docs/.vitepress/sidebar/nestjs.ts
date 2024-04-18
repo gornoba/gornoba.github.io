@@ -252,5 +252,13 @@ export const nestjsFundamentals = {
       text: "Excution Context",
       link: "excution-context",
     },
+    {
+      text: "Lifecycle Events",
+      link: "lifecycle-events",
+    },
+    {
+      text: "Testing",
+      link: "testing",
+    },
   ],
 };
