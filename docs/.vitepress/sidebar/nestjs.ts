@@ -262,3 +262,15 @@ export const nestjsFundamentals = {
     },
   ],
 };
+
+export const nestjsTechniques = {
+  base: "/backend/nestjs/techniques/",
+  text: "Techniques",
+  collapsed: true,
+  items: [
+    {
+      text: "Configuration",
+      link: "configuration",
+    },
+  ],
+};
