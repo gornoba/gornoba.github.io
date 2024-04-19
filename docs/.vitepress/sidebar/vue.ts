@@ -52,6 +52,19 @@ export const vueReusability = {
   ],
 };
 
+export const vueBuiltInComponent = {
+  text: "Built-in Components",
+  base: "/frontend/vue/built-in-components/",
+  collapsed: true,
+  items: [
+    { text: "Transition", link: "transition" },
+    { text: "Transition Group", link: "transition-group" },
+    { text: "Keep Alive", link: "keep-alive" },
+    { text: "Teleport", link: "teleport" },
+    { text: "Suspense", link: "suspense" },
+  ],
+};
+
 export const vueLibraries = {
   text: "Libraries",
   base: "/frontend/vue/libraries/",

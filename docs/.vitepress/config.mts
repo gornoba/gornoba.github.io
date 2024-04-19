@@ -37,6 +37,7 @@ import { postgresBackup } from "./sidebar/postgres";
 import { dockerStart } from "./sidebar/docker";
 import { winyearend } from "./sidebar/project";
 import {
+  vueBuiltInComponent,
   vueComponents,
   vueEssentials,
   vueLibraries,
@@ -151,6 +152,7 @@ export default defineConfig({
               vueEssentials,
               vueComponents,
               vueReusability,
+              vueBuiltInComponent,
               vueLibraries,
             ],
           },
