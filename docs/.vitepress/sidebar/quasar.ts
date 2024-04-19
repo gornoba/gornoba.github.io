@@ -64,6 +64,14 @@ export const quasrStyleIdentity = {
       link: "dark-mode",
     },
     {
+      text: "Spacing",
+      link: "spacing",
+    },
+    {
+      text: "Shadows",
+      link: "shadows",
+    },
+    {
       text: "CSS Visibility",
       link: "css-visibility",
     },
