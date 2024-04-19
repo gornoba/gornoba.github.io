@@ -32,3 +32,8 @@
 ## print
 
 <table class="q-table"><thead><tr><th class="text-left"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">클래스 이름</font></font></th><th class="text-left"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">설명</font></font></th></tr></thead><tbody><tr><td><code class="doc-token">print-only</code></td><td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">인쇄 매체에만 표시 - </font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">화면</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 매체 에는 숨겨짐</font></font></td></tr><tr><td><code class="doc-token">print-hide</code></td><td><font style="vertical-align: inherit;"></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">화면</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 미디어 에 표시됨 </font><font style="vertical-align: inherit;">- </font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">인쇄</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 미디어 에는 숨겨짐</font></font></td></tr></tbody></table>
+
+## Theme Builder
+
+https://quasar.dev/style/theme-builder<br/>
+brand color의 설정을 도와주는 도구 입니다.

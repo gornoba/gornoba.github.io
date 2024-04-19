@@ -47,6 +47,7 @@ import {
 import {
   quasarOptionHelper,
   quasarPlugin,
+  quasarUtils,
   quasrStyleIdentity,
 } from "./sidebar/quasar";
 
@@ -167,6 +168,7 @@ export default defineConfig({
               quasarOptionHelper,
               quasrStyleIdentity,
               quasarPlugin,
+              quasarUtils,
             ],
           },
           {

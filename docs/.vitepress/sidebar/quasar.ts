@@ -52,6 +52,18 @@ export const quasrStyleIdentity = {
   collapsed: true,
   items: [
     {
+      text: "Typography",
+      link: "typography",
+    },
+    {
+      text: "Color Palette",
+      link: "color-palette",
+    },
+    {
+      text: "Dark Mode",
+      link: "dark-mode",
+    },
+    {
       text: "CSS Visibility",
       link: "css-visibility",
     },
@@ -62,5 +74,15 @@ export const quasarPlugin = {
   base: "/frontend/quasar/plugin/",
   text: "Plugin",
   collapsed: true,
-  items: [{ text: "Meta", link: "meta" }],
+  items: [
+    { text: "Dark Plugin", link: "dark" },
+    { text: "Meta", link: "meta" },
+  ],
+};
+
+export const quasarUtils = {
+  base: "/frontend/quasar/utils/",
+  text: "Utils",
+  collapsed: true,
+  items: [{ text: "Color Utils", link: "color-utils" }],
 };
