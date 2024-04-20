@@ -298,3 +298,41 @@ export const kubeStorage = {
     { text: "Storage Class", link: "storage-class" },
   ],
 };
+
+export const kubeNetworking = {
+  base: "/devops/kubernetes/networking/",
+  text: "Networking",
+  collapsed: true,
+  items: [
+    {
+      text: "Prerequsite",
+      collapsed: true,
+      items: [
+        {
+          text: "Switching Routing",
+          link: "switching-routing",
+        },
+        {
+          text: "DNS",
+          link: "dns",
+        },
+        {
+          text: "CoreDNS",
+          link: "coredns",
+        },
+        {
+          text: "Network Namespaces",
+          link: "network-namespaces",
+        },
+        {
+          text: "Docker Networking",
+          link: "docker-networking",
+        },
+        {
+          text: "CNI",
+          link: "cni",
+        },
+      ],
+    },
+  ],
+};

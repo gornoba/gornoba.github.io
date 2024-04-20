@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 import {
+  kubeNetworking,
   kubeStorage,
   kuberApplicationLifecycle,
   kuberClusterMaintenance,
@@ -215,6 +216,7 @@ export default defineConfig({
               kuberClusterMaintenance,
               kuberSecurity,
               kubeStorage,
+              kubeNetworking,
             ],
           },
           {

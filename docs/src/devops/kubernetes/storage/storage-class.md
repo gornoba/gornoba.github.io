@@ -12,36 +12,56 @@
 
 스토리지 클래스를 생성하는 방법은 다음과 같습니다.
 
-\`\`\`yaml
+```yaml
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-name: standard
+  name: google-storage
 provisioner: kubernetes.io/gce-pd
 parameters:
-type: pd-standard
-\`\`\`
-
-이 YAML 파일은 GCP의 표준 영구 디스크를 사용하는 스토리지 클래스를 정의합니다. `pd-standard`는 스토리지 유형을 지정합니다.
+  type: pd-standard [ pd-standard | pd-ssd ]
+  replication-type: none [ none | reginal-pd]
+```
 
 ### PVC에서 스토리지 클래스 사용하기
 
 PVC를 생성할 때 스토리지 클래스를 지정하면, 해당 클래스에 따라 스토리지가 자동으로 프로비저닝됩니다. 다음은 PVC에서 스토리지 클래스를 사용하는 예시입니다.
 
-\`\`\`yaml
+```yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-name: my-pvc
+  name: my-pvc
 spec:
-accessModes: - ReadWriteOnce
-resources:
-requests:
-storage: 500Mi
-storageClassName: standard
-\`\`\`
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
+  storageClassName: google-storage
+```
 
-이 구성에서 `storageClassName: standard`는 이전에 생성한 스토리지 클래스를 참조합니다. 이로 인해 요청된 스토리지가 자동으로 생성되고 PVC에 바인딩됩니다.
+이 구성에서 `storageClassName: google-storage`는 이전에 생성한 스토리지 클래스를 참조합니다. 이로 인해 요청된 스토리지가 자동으로 생성되고 PVC에 바인딩됩니다.
+
+## Create a Pod
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+    - name: frontend
+      image: nginx
+      volumeMounts:
+        - mountPath: "/var/www/html"
+          name: web
+  volumes:
+    - name: web
+      persistentVolumeClaim:
+        claimName: myclaim
+```
 
 ## 결론
 
