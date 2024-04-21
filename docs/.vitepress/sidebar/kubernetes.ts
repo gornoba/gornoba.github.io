@@ -332,7 +332,27 @@ export const kubeNetworking = {
           text: "CNI",
           link: "cni",
         },
+        {
+          text: "Cluster Networking",
+          link: "cluster-networking",
+        },
+        {
+          text: "Prerequsite - Practice",
+          link: "prerequsite-practice",
+        },
       ],
+    },
+    {
+      text: "Pod Networking",
+      link: "pod-networking",
+    },
+    {
+      text: "CNI in kubernetes",
+      link: "cni-in-kubernetes",
+    },
+    {
+      text: "CNI weave",
+      link: "cni-weave",
     },
   ],
 };

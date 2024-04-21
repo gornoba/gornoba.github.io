@@ -46,4 +46,5 @@ CNI는 컨테이너 네트워킹의 표준화를 위한 중요한 도구입니�
 
 ## References Docs
 
-https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/
+https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/<br/>
+https://kubernetes.io/docs/concepts/cluster-administration/networking/#how-to-implement-the-kubernetes-networking-model
