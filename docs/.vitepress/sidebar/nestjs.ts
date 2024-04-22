@@ -165,6 +165,10 @@ export const nestjsBasic = {
           text: "TypeORM Relation",
           link: "typeorm-relation",
         },
+        {
+          text: "TypeORM MongoDB",
+          link: "typeorm-mongodb",
+        },
       ],
     },
   ],
