@@ -316,6 +316,7 @@ export abstract class AbstractMongoRepository<T extends AbstractMongoEntity> {
 <br/>
 여기서도 Async Localstorage를 이용해서 EntityManager를 받고 있습니다.   
 transaction을 위해서 transaction 데코레이터를 약간 손봐줍니다.
+<br/>
 
 #### transaction decorator
 
@@ -406,7 +407,7 @@ async createPerson(body: PersonMongoDto) {
 ```
 
 이제 생성 swagger를 통해서 실행해보면 person 밑에 cats data가 잘 들어간 것을 확인 할 수 있습니다.
-:::datails
+:::details
 
 ```json
 {
