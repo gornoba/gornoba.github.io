@@ -357,3 +357,101 @@ export class Transaction implements LazyDecorator<any, string> {
   }
 }
 ```
+
+#### controller > service > repository
+
+이제 드디어 실행하면 됩니다. 복잡한것만 일단 해보겠습니다.
+
+```typescript
+// controller
+@Post('person')
+async createPerson(@Body() body: PersonMongoDto) {
+  return await this.mongoService.createPerson(body);
+}
+
+// dto
+export class PersonMongoDto extends PickType(PersonMongoEntity, [
+  'name',
+] as const) {
+  @ApiProperty({
+    type: [CatMongoDto],
+    description: 'The cats of a person',
+  })
+  @ValidateNested({ each: true })
+  @Type(() => CatMongoDto)
+  cats: CatMongoDto[];
+}
+
+// service
+@TransactionDeco('mongo')
+async createPerson(body: PersonMongoDto) {
+  return await this.personMongoRepository.createPerson(body);
+}
+
+// repository
+async createPerson(body: PersonMongoDto) {
+  const queryRuuner: EntityManager = this.queryRunner();
+  const person = new PersonMongoEntity();
+  person.name = body.name;
+  person.cats = body.cats.map(
+    (cat: CatsMongoEntity) => new CatsMongoEntity(cat),
+  );
+
+  const result = await queryRuuner
+    .getMongoRepository(PersonMongoEntity)
+    .save(person);
+
+  return result;
+}
+```
+
+이제 생성 swagger를 통해서 실행해보면 person 밑에 cats data가 잘 들어간 것을 확인 할 수 있습니다.
+:::datails
+
+```json
+{
+  "success": true,
+  "data": {
+    "name": "나에요",
+    "cats": [
+      {
+        "_id": "66261b3cb84c7fed3ef48c2d",
+        "active": true,
+        "createdAt": "2024-04-22 17:09:32.156",
+        "updatedAt": "2024-04-22 17:09:32.156",
+        "name": "Kitty",
+        "age": 3,
+        "breed": "Scottish Fold"
+      },
+      {
+        "_id": "66261b3cb84c7fed3ef48c2e",
+        "active": true,
+        "createdAt": "2024-04-22 17:09:32.156",
+        "updatedAt": "2024-04-22 17:09:32.156",
+        "name": "papa",
+        "age": 3,
+        "breed": "Scottish Fold"
+      },
+      {
+        "_id": "66261b3cb84c7fed3ef48c2f",
+        "active": true,
+        "createdAt": "2024-04-22 17:09:32.156",
+        "updatedAt": "2024-04-22 17:09:32.156",
+        "name": "popo",
+        "age": 3,
+        "breed": "Scottish Fold"
+      }
+    ],
+    "createdAt": "2024-04-22 17:09:32.158",
+    "updatedAt": "2024-04-22 17:09:32.158",
+    "_id": "66261b3cb84c7fed3ef48c30"
+  }
+}
+```
+
+:::
+
+## 후기
+
+아직까지 MongoDB를 쓰면서 개발을 해본적은 없지만 typeorm으로 꽤나 간편하게 구현이 가능하다는 것은 참 좋은일 같습니다.  
+typeorm이 계속 발전하면 더 많이 지원될 것이라 생각됩니다.
