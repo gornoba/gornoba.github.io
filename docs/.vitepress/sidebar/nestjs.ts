@@ -276,5 +276,9 @@ export const nestjsTechniques = {
       text: "Configuration",
       link: "configuration",
     },
+    {
+      text: "Caching",
+      link: "caching",
+    },
   ],
 };
