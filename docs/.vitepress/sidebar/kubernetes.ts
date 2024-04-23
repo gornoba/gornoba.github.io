@@ -349,10 +349,21 @@ export const kubeNetworking = {
     {
       text: "CNI in kubernetes",
       link: "cni-in-kubernetes",
+      collapsed: true,
+      items: [
+        {
+          text: "CNI weave",
+          link: "cni-weave",
+        },
+        {
+          text: "IP Address Management - Weave",
+          link: "ip-address-management",
+        },
+      ],
     },
     {
-      text: "CNI weave",
-      link: "cni-weave",
+      text: "Service Networking",
+      link: "service-networking",
     },
   ],
 };
