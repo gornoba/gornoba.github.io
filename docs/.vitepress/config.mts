@@ -46,6 +46,7 @@ import {
   vueStart,
 } from "./sidebar/vue";
 import {
+  quasarLayoutAndGrid,
   quasarOptionHelper,
   quasarPlugin,
   quasarUtils,
@@ -168,6 +169,7 @@ export default defineConfig({
               },
               quasarOptionHelper,
               quasrStyleIdentity,
+              quasarLayoutAndGrid,
               quasarPlugin,
               quasarUtils,
             ],

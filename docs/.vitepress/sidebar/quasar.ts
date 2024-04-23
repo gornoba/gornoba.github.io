@@ -72,8 +72,56 @@ export const quasrStyleIdentity = {
       link: "shadows",
     },
     {
-      text: "CSS Visibility",
+      text: "Visibility",
       link: "css-visibility",
+    },
+    {
+      text: "Positioning",
+      link: "positioning",
+    },
+    {
+      text: "Sass/SCSS Variables",
+      link: "sass-scss-variables",
+    },
+    {
+      text: "Other CSS Helper Classes",
+      link: "other-css-helper-classes",
+    },
+  ],
+};
+
+export const quasarLayoutAndGrid = {
+  base: "/frontend/quasar/layout-grid/",
+  text: "Layout & Grid",
+  collapsed: true,
+  items: [
+    {
+      text: "Flex Grid",
+      link: "flex-grid",
+    },
+    {
+      text: "Layout",
+      link: "layout",
+    },
+    {
+      text: "Routing with Layouts and Pages",
+      link: "routing-with-layouts-and-pages",
+    },
+    {
+      text: "Layout Header and Footer",
+      link: "layout-header-and-footer",
+    },
+    {
+      text: "Layout Drawer",
+      link: "layout-drawer",
+    },
+    {
+      text: "Layout Page",
+      link: "layout-page",
+    },
+    {
+      text: "Layout Builder & Gallery",
+      link: "layout-builder-and-gallery",
     },
   ],
 };
