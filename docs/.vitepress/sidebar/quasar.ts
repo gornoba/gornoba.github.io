@@ -123,7 +123,21 @@ export const quasarLayoutAndGrid = {
       text: "Layout Builder & Gallery",
       link: "layout-builder-and-gallery",
     },
+    {
+      text: "Page Sticky",
+      link: "layout-qpagesticky",
+    },
+    {
+      text: "Page Scroller",
+      link: "layout-qpagescroller",
+    },
   ],
+};
+
+export const quasarVueComponents = {
+  base: "/frontend/quasar/vue-components/",
+  text: "Vue Components",
+  link: "/",
 };
 
 export const quasarPlugin = {

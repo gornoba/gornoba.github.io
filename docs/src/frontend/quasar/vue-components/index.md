@@ -1,0 +1,77 @@
+# Vue Components
+
+컴포넌트는 다양하게 있습니다. 너무많아 하나하나 설명할 수는 없고 본인에게 필요한 부분을 찾아 사용하면 될 것 같습니다.
+
+## 종류
+
+- [Ajax Bar](https://quasar.dev/vue-components/ajax-bar): 비동기 로딩 바
+- [Avatar](https://quasar.dev/vue-components/avatar)
+- [Badge](https://quasar.dev/vue-components/badge)
+- [Banner](https://quasar.dev/vue-components/banner)
+- [Bar](https://quasar.dev/vue-components/bar)
+- [Breadcrumbs](https://quasar.dev/vue-components/breadcrumbs): UI에서 탐색 보조 도구로 웹사이트 내에서 자신의 위치를 추적할 수 있게 해줍니다.
+- [Button](https://quasar.dev/vue-components/button)
+- [Button Group](https://quasar.dev/vue-components/button-group)
+- [Button Dropdown](https://quasar.dev/vue-components/button-dropdown)
+- [Card](https://quasar.dev/vue-components/card)
+- [Carousel](https://quasar.dev/vue-components/carousel): 슬라이스를 이용하여 표현하게 해줍니다.
+- [Chat Message](https://quasar.dev/vue-components/chat)
+- [Chip](https://quasar.dev/vue-components/chip): 연락처와 같은 고급 기본 데이터를 간결한 방식으로 표현합니다.
+- [Circular Progress](https://quasar.dev/vue-components/circular-progress): 원형 진행률을 표시합니다.
+- [Color Picker](https://quasar.dev/vue-components/color-picker)
+- [Dialog](https://quasar.dev/vue-components/dialog): 일종의 플로팅 모달로 생각하면 됩니다.
+- [Editor](https://quasar.dev/vue-components/editor)
+- [Expansion Item](https://quasar.dev/vue-components/expansion-item)
+- [Floating Action Button](https://quasar.dev/vue-components/floating-action-button)
+- [Form Input](https://quasar.dev/vue-components/input)
+- [Form Select](https://quasar.dev/vue-components/select)
+- [Form File picker](https://quasar.dev/vue-components/file)
+- [Form Form](https://quasar.dev/vue-components/form)
+- [Form Field](https://quasar.dev/vue-components/field)
+- [Form Radio](https://quasar.dev/vue-components/radio)
+- [Form Checkbox](https://quasar.dev/vue-components/checkbox)
+- [Form Toggle](https://quasar.dev/vue-components/toggle)
+- [Form Button Toggle](https://quasar.dev/vue-components/button-toggle)
+- [Form Option Group](https://quasar.dev/vue-components/option-group)
+- [Form Slider](https://quasar.dev/vue-components/slider)
+- [Form Range](https://quasar.dev/vue-components/range)
+- [Form Time Picker](https://quasar.dev/vue-components/time)
+- [Form Date Picker](https://quasar.dev/vue-components/date)
+- [Icon](https://quasar.dev/vue-components/icon)
+- [Img](https://quasar.dev/vue-components/img)
+- [Infinite Scroll](https://quasar.dev/vue-components/infinite-scroll)
+- [Inner Loading](https://quasar.dev/vue-components/inner-loading)
+- [Intersection](https://quasar.dev/vue-components/intersection): DOM 요소(또는 컴포넌트)가 뷰포트에 들어오거나 나올 때 메서드를 호출할 수 있도록 하는 intersection directive를 wrap하는 것으로 선택적으로 표시/숨기기 전환도 할 수 있다는 이점이 있습니다.
+- [Knob](https://quasar.dev/vue-components/knob): circular progress를 기반으로 마우스/터치 패닝을 통해 사용자로부터 숫자 입력을 받는 데 사용됩니다.
+- [Linear Progress](https://quasar.dev/vue-components/linear-progress) 백그라운드에서 작업이 진행 중임을 알리는 데 사용합니다.
+- [List and List Items](https://quasar.dev/vue-components/list-and-list-items)
+- [Markup Table](https://quasar.dev/vue-components/markup-table): 머티리얼 디자인 테이블처럼 보이도록 하는 방법입니다.
+- [Menu](https://quasar.dev/vue-components/menu)
+- [Resize Observer](https://quasar.dev/vue-components/resize-observer)
+- [Scroll Observer](https://quasar.dev/vue-components/scroll-observer)
+- [Pagination](https://quasar.dev/vue-components/pagination)
+- [Parallax](https://quasar.dev/vue-components/parallax): 배경 이미지가 전경 이미지보다 느리게 이동하여 2D 장면에 깊이감을 주고 몰입감을 더하는 기법입니다.
+- [Popup Edit](https://quasar.dev/vue-components/popup-edit#with-qtable)
+- [Popup Proxy](https://quasar.dev/vue-components/popup-proxy)
+- [Pull to refresh](https://quasar.dev/vue-components/pull-to-refresh): 아래로 끌어 내렸을 떄 새로고침하게 해주는 기능입니다.
+- [Rating](https://quasar.dev/vue-components/rating)
+- [Responsive](https://quasar.dev/vue-components/responsive): 콘텐츠가 너비에 따라 가로 세로 비율을 유지하도록 강제하는 구성 요소입니다.
+- [Scroll Area](https://quasar.dev/vue-components/scroll-area): 컴포넌트는 콘텐츠를 캡슐화하여 스크롤바를 깔끔하게 사용자 정의할 수 있는 방법을 제공합니다.
+- [Separator](https://quasar.dev/vue-components/separator)
+- [Skeleton](https://quasar.dev/vue-components/skeleton): 실제 페이지 데이터를 로드하기 전에 콘텐츠의 플레이스홀더 미리보기를 표시하는 컴포넌트입니다.
+- [Slide Item](https://quasar.dev/vue-components/slide-item): 두 개의 추가 슬롯(왼쪽과 오른쪽)이 있는 Q아이템으로, 사용자가 마우스 또는 터치 디바이스의 손가락으로 항목을 드래그하여 특정 동작을 적용할 수 있습니다.
+- [Slide Transition](https://quasar.dev/vue-components/slide-transition): 트랜지션은 가시성에 따라 DOM 요소(또는 컴포넌트)를 위아래로 슬라이드합니다.
+- [Space](https://quasar.dev/vue-components/space)
+- [Spinners](https://quasar.dev/vue-components/spinners)
+- [Splitter](https://quasar.dev/vue-components/splitter)
+- [Stepper](https://quasar.dev/vue-components/stepper): 논리적이고 번호가 매겨진 일련의 단계를 통해 진행 상황을 표시합니다.
+- [Table](https://quasar.dev/vue-components/table)
+- [Tabs](https://quasar.dev/vue-components/tabs)
+- [Tab Panels](https://quasar.dev/vue-components/tab-panels)
+- [Timeline](https://quasar.dev/vue-components/timeline)
+- [Toolbar](https://quasar.dev/vue-components/toolbar)
+- [Tooltip](https://quasar.dev/vue-components/tooltip)
+- [Tree](https://quasar.dev/vue-components/tree): 목차와 같은 계층적 데이터를 표시하는 고도로 구성 가능한 구성 요소를 나타냅니다.
+- [Uploader](https://quasar.dev/vue-components/uploader)
+- [Video](https://quasar.dev/vue-components/video)
+- [Virtual Scroll](https://quasar.dev/vue-components/virtual-scroll#scroll-to-position): 긴 항목 목록의 일부만 표시하고 사용자가 컨테이너에서 스크롤할 때 보이는 항목을 업데이트할 수 있습니다.
