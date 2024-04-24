@@ -27,5 +27,4 @@ hooks:
     - location: Scripts/MonitorService.sh
       timeout: 3600
       runas: codedeployuser
-
 ```

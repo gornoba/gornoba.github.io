@@ -365,5 +365,13 @@ export const kubeNetworking = {
       text: "Service Networking",
       link: "service-networking",
     },
+    {
+      text: "DNS in kubernetes",
+      link: "dns-in-kubernetes",
+    },
+    {
+      text: "CoreDNS in Kubernetes",
+      link: "coredns-in-kubernetes",
+    },
   ],
 };

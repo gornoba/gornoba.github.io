@@ -23,14 +23,14 @@
   ```
   srcDir에 src를 기준으로 되어 있습니다.
 - `src/public` 폴더 생성
-  - public 폴더에 image, robots.txt, 소유권 인증을 위한 html이 위차하게 됩니다.
-  - build를 하면 public의 파일이 root에 위치하게 됩니다.
+  - `public` 폴더에 `image`, `robots.txt`, 소유권 인증을 위한 html이 위차하게 됩니다.
+  - `build를` 하면 `public의` 파일이 root에 위치하게 됩니다.
 
-## robots.txt
+## `robots.txt`
 
 - `robots.txt` 파일을 `public` 폴더에 생성
 
-```txt
+```
 User-agent: *
 Allow: /
 Sitemap: https://[id].github.io/

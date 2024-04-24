@@ -72,10 +72,10 @@ import CustomComponent from '../components/CustomComponent.vue'
 
 헤더에서 Vue 컴포넌트를 사용할 수 있지만, 다음 두 가지 문법 사이의 차이에 주의하세요
 
-| Markdown          | Output HTML                               | Parsed Header |
-| :---------------- | ----------------------------------------- | ------------: |
-| # text \<Tag/>    | `<h1>text <Tag/></h1>`                    |        `text` |
-| # text \`\<Tag/>` | `<h1>text <code>&lt;Tag/&gt;</code></h1>` | `text <Tag/>` |
+| Markdown         | Output HTML                               | Parsed Header |
+| :--------------- | ----------------------------------------- | ------------: |
+| # text \<Tag/>   | `<h1>text <Tag/></h1>`                    |        `text` |
+| # text `\<Tag/>` | `<h1>text <code>&lt;Tag/&gt;</code></h1>` | `text <Tag/>` |
 
 `<code>`로 감싼 HTML은 그대로 표시되며, 감싸지 않은 HTML만 Vue에 의해 처리됩니다.
 
