@@ -280,5 +280,9 @@ export const nestjsTechniques = {
       text: "Caching",
       link: "caching",
     },
+    {
+      text: "Task Scheduling",
+      link: "task-scheduling",
+    },
   ],
 };
