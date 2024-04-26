@@ -373,5 +373,9 @@ export const kubeNetworking = {
       text: "CoreDNS in Kubernetes",
       link: "coredns-in-kubernetes",
     },
+    {
+      text: "Ingress",
+      link: "ingress",
+    },
   ],
 };
