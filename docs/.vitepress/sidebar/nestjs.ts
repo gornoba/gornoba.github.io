@@ -284,5 +284,9 @@ export const nestjsTechniques = {
       text: "Task Scheduling",
       link: "task-scheduling",
     },
+    {
+      text: "Queue",
+      link: "queue",
+    },
   ],
 };

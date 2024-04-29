@@ -27,5 +27,9 @@ export const whoamiCompany = {
       link: "nestjs-orm-transaction",
       items: [{ text: "@toss/nestjs-aop", link: "toss-aop" }],
     },
+    {
+      text: "다중 요청건에 대한 방어",
+      link: "nestjs-request-limit",
+    },
   ],
 };

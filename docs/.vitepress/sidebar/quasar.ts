@@ -140,13 +140,29 @@ export const quasarVueComponents = {
   link: "/",
 };
 
+export const quasarVueDirectives = {
+  base: "/frontend/quasar/vue-directives/",
+  text: "Vue Directives",
+  link: "/",
+};
+
 export const quasarPlugin = {
   base: "/frontend/quasar/plugin/",
   text: "Plugin",
   collapsed: true,
   items: [
+    { text: "AddressbarColor Plugin", link: "addressbar-color" },
+    { text: "Fullscreen Plugin", link: "fullscreen" },
+    { text: "App Visibility", link: "app-visibility" },
+    { text: "Bottom Sheet Plugin", link: "bottom-sheet" },
+    { text: "Cookies", link: "cookies" },
     { text: "Dark Plugin", link: "dark" },
+    { text: "Dialog Plugin", link: "dialog" },
+    { text: "Loading Plugin", link: "loading" },
+    { link: "loading-bar", text: "Loading Bar" },
+    { text: "Local/Session Storage Plugins", link: "local-session-storage" },
     { text: "Meta", link: "meta" },
+    { text: "Notify", link: "notify" },
   ],
 };
 

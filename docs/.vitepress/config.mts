@@ -54,6 +54,7 @@ import {
   quasarPlugin,
   quasarUtils,
   quasarVueComponents,
+  quasarVueDirectives,
   quasrStyleIdentity,
 } from "./sidebar/quasar";
 
@@ -175,6 +176,7 @@ export default defineConfig({
               quasrStyleIdentity,
               quasarLayoutAndGrid,
               quasarVueComponents,
+              quasarVueDirectives,
               quasarPlugin,
               quasarUtils,
             ],
