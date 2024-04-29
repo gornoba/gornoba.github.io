@@ -379,3 +379,45 @@ export const kubeNetworking = {
     },
   ],
 };
+
+export const kubeDesignInstall = {
+  base: "/devops/kubernetes/design-install/",
+  text: "Design and Install a Kubernetes Cluster",
+  collapsed: true,
+  items: [
+    {
+      text: "Design a Kubernetes Cluster",
+      link: "design-a-kubernetes-cluster",
+    },
+    {
+      text: "Choosing Kubernetes Instructure",
+      link: "choosing-kubernetes-instructure",
+    },
+    {
+      text: "Configure High Availability",
+      link: "configure-high-availability",
+    },
+    {
+      text: "ETCD in HA",
+      link: "etcd-in-ha",
+    },
+  ],
+};
+
+export const kubeInstallKubeadmWay = {
+  base: "/devops/kubernetes/install-kubeadm-way/",
+  text: "Install Kubernetes the Kubeadm Way",
+  collapsed: true,
+  items: [
+    {
+      text: "Instruction to Deployment with Kubeadm",
+      link: "kubeadm-deployment",
+    },
+    { text: "Resources", link: "resources" },
+    {
+      text: "Deploy with Kubeadm -Provision Vms with Vagrant",
+      link: "deploy-with-kubeadm",
+    },
+    { text: "Demo - Deployment with Kubeadm", link: "demo-deployment" },
+  ],
+};

@@ -1,5 +1,7 @@
 import { defineConfig } from "vitepress";
 import {
+  kubeDesignInstall,
+  kubeInstallKubeadmWay,
   kubeNetworking,
   kubeStorage,
   kuberApplicationLifecycle,
@@ -221,6 +223,8 @@ export default defineConfig({
               kuberSecurity,
               kubeStorage,
               kubeNetworking,
+              kubeDesignInstall,
+              kubeInstallKubeadmWay,
             ],
           },
           {
