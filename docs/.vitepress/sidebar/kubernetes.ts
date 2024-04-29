@@ -413,11 +413,5 @@ export const kubeInstallKubeadmWay = {
       text: "Instruction to Deployment with Kubeadm",
       link: "kubeadm-deployment",
     },
-    { text: "Resources", link: "resources" },
-    {
-      text: "Deploy with Kubeadm -Provision Vms with Vagrant",
-      link: "deploy-with-kubeadm",
-    },
-    { text: "Demo - Deployment with Kubeadm", link: "demo-deployment" },
   ],
 };
