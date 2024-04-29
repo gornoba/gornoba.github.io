@@ -25,6 +25,7 @@ import {
   nestjsTest,
   nestjsApplied,
   nestjsFundamentals,
+  nestjsTechniques,
 } from "./sidebar/nestjs";
 import { whoamiCompany, whoamiInto } from "./sidebar/whoami";
 import {
@@ -201,6 +202,7 @@ export default defineConfig({
               nestjsPreparation,
               nestjsBasic,
               nestjsFundamentals,
+              nestjsTechniques,
               nestjsTest,
               nestjsApplied,
             ],
