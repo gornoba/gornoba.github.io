@@ -288,5 +288,9 @@ export const nestjsTechniques = {
       text: "Queue",
       link: "queue",
     },
+    {
+      text: "Cookies",
+      link: "cookies",
+    },
   ],
 };
