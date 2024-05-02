@@ -292,5 +292,9 @@ export const nestjsTechniques = {
       text: "Cookies",
       link: "cookies",
     },
+    {
+      text: "Events",
+      link: "events",
+    },
   ],
 };
