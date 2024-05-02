@@ -296,5 +296,9 @@ export const nestjsTechniques = {
       text: "Events",
       link: "events",
     },
+    {
+      text: "Compression",
+      link: "compression",
+    },
   ],
 };
