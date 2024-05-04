@@ -415,3 +415,27 @@ export const kubeInstallKubeadmWay = {
     },
   ],
 };
+
+export const kubeTroubleshooting = {
+  base: "/devops/kubernetes/troubleshooting/",
+  text: "Troubleshooting",
+  collapsed: true,
+  items: [
+    {
+      text: "Application Failure",
+      link: "application-failure",
+    },
+    {
+      text: "Control Plane Failure",
+      link: "control-plane-failure",
+    },
+    {
+      text: "Worker Node Failure",
+      link: "worker-node-failure",
+    },
+    {
+      text: "Networking Troubleshooting",
+      link: "networking-troubleshooting",
+    },
+  ],
+};

@@ -4,6 +4,7 @@ import {
   kubeInstallKubeadmWay,
   kubeNetworking,
   kubeStorage,
+  kubeTroubleshooting,
   kuberApplicationLifecycle,
   kuberClusterMaintenance,
   kuberConcepts,
@@ -229,6 +230,7 @@ export default defineConfig({
               kubeNetworking,
               kubeDesignInstall,
               kubeInstallKubeadmWay,
+              kubeTroubleshooting,
             ],
           },
           {
