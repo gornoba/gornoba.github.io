@@ -300,5 +300,9 @@ export const nestjsTechniques = {
       text: "Compression",
       link: "compression",
     },
+    {
+      text: "File upload",
+      link: "file-upload",
+    },
   ],
 };
