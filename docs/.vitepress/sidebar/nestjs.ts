@@ -304,5 +304,21 @@ export const nestjsTechniques = {
       text: "File upload",
       link: "file-upload",
     },
+    {
+      text: "Streaming files",
+      link: "streaming-files",
+    },
+    {
+      text: "HTTP module",
+      link: "http-module",
+    },
+    {
+      text: "Fastify",
+      link: "fastify",
+    },
+    {
+      text: "Server Sent Events",
+      link: "server-sent-events",
+    },
   ],
 };
