@@ -322,3 +322,19 @@ export const nestjsTechniques = {
     },
   ],
 };
+
+export const nestjsEtc = {
+  base: "/backend/nestjs/etc/",
+  text: "Etc",
+  collapsed: true,
+  items: [
+    {
+      text: "Social Login",
+      link: "social-login",
+    },
+    {
+      text: "Optimize Images",
+      link: "optimize-images",
+    },
+  ],
+};
