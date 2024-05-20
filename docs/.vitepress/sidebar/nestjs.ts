@@ -336,5 +336,9 @@ export const nestjsEtc = {
       text: "Optimize Images",
       link: "optimize-images",
     },
+    {
+      text: "Firebase",
+      link: "firebase",
+    },
   ],
 };
