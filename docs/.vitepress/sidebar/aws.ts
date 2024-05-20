@@ -117,3 +117,25 @@ export const awsRds = {
     },
   ],
 };
+
+export const awsEks = {
+  text: "EKS",
+  base: "/aws/eks/",
+  collapsed: true,
+  items: [
+    {
+      text: "EKS - Create Cluster using eksctl",
+      base: "/aws/eks/create-cluster/",
+      items: [
+        {
+          text: "Install CLI",
+          link: "install-cli",
+        },
+        {
+          text: "EKS Cluster Introduction",
+          link: "cluster-introduction",
+        },
+      ],
+    },
+  ],
+};

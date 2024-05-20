@@ -33,6 +33,7 @@ import { whoamiCompany, whoamiInto } from "./sidebar/whoami";
 import {
   awsCodepipeline,
   awsEc2,
+  awsEks,
   awsIam,
   awsRds,
   awsRoute53,
@@ -251,6 +252,7 @@ export default defineConfig({
             link: "/",
             collapsed: true,
             items: [
+              awsEks,
               awsIam,
               awsEc2,
               awsRds,
