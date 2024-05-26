@@ -135,6 +135,10 @@ export const awsEks = {
           text: "EKS Cluster Introduction",
           link: "cluster-introduction",
         },
+        {
+          text: "Create EKS Cluster & Node Groups",
+          link: "create-cluster",
+        },
       ],
     },
   ],
