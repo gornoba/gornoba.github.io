@@ -4,7 +4,7 @@
 
 ```sh
 # Create Cluster
-eksctl create cluster --name=eksdemo1 --region=ap-northeast-2 --zones=ap-northeast-2a,ap-northeast-2b --without-nodegroup
+eksctl create cluster --name=eksnest --region=ap-northeast-2 --zones=ap-northeast-2a,ap-northeast-2b --without-nodegroup
 
 # Get List of clusters
 eksctl get cluster
@@ -12,9 +12,19 @@ eksctl get cluster
 
 ## Create & Associate IAM OIDC Provider for our EKS Cluster
 
+EKS 클러스터와 IAM OpenID Connect (OIDC) 공급자를 연동하는 것은 특정 Kubernetes 작업에서 IAM 역할을 사용하기 위해 필요합니다. 이 연동을 통해 Kubernetes 서비스 계정에 IAM 역할을 연결할 수 있게 되며, 이는 EKS 클러스터에서 실행되는 애플리케이션이 AWS 리소스에 안전하게 접근할 수 있도록 하는 중요한 설정입니다.
+
 ```sh
-eksctl utils associate-iam-oidc-provider --region ap-northeast-2 --cluster eksdemo1 --approve
+eksctl utils associate-iam-oidc-provider --region ap-northeast-2 --cluster eksnest --approve
 ```
+
+<br/>
+
+```sh
+aws iam list-open-id-connect-providers
+```
+
+생성 후 위 명령어로 확인하고 iam > 엑세스 관리 > 자격 증명 공급자에서 맞는지 확인.
 
 ## Create EC2 Keypair
 
@@ -24,16 +34,16 @@ EC2 > 네트워크 및 보안 > 키 페어 > 키 페어 생성 > 이름 적고 �
 
 ```sh
 # Create Public Node Group
-eksctl create nodegroup --cluster=eksdemo1 \
+eksctl create nodegroup --cluster=eksnest \
                        --region=ap-northeast-2 \
-                       --name=eksdemo1-ng-public1 \
+                       --name=eksnest-ng-public1 \
                        --node-type=t2.micro \
                        --nodes=2 \
                        --nodes-min=2 \
                        --nodes-max=4 \
                        --node-volume-size=20 \
                        --ssh-access \
-                       --ssh-public-key=kube-demo \
+                       --ssh-public-key=eksnest \
                        --managed \
                        --asg-access \
                        --external-dns-access \
@@ -129,6 +139,17 @@ eksctl create nodegroup --cluster=eksdemo1 \
 
 ## 확인
 
-- EKS, VPC, EC2, IAM, 보안그룹, CloudFormation이 제대로 생성되어 있는지 확인
+- EKS, VPC, EC2, IAM, 보안그룹, nat, CloudFormation이 제대로 생성되어 있는지 확인
 - EC2가 private key로 ssh 접속 가능한지 확인
 - 공부를 위해서 EC2의 보안그룹에 inbound를 모두 수용하게 설정
+
+## EC2 인바운드 규칙
+
+포트범위는 전체로 하고 본인의 아이피 주소를 열어둡니다.
+
+## 식제
+
+```sh
+eksctl delete nodegroup --cluster=eksnest --name=eksnest-ng-public1
+eksctl delete cluster eksnest
+```

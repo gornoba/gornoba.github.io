@@ -20,8 +20,12 @@ IAM > 사용자 > 사용자 생성 > 정책연결 > cli로 access key 생성
 
 - AmazonEKSClusterPolicy
 - AmazonEKSServicePolicy
-- AmazonEC2ReadOnlyAccess
-- IAMReadOnlyAccess
+- AmazonEKSWorkerNodePolicy
+- AmazonVPCFullAccess
+- AWSCloudFormationFullAccess
+- ElasticLoadBalancingFullAccess
+- AmazonEC2FullAccess
+- IAMFullAccess
 
 ```sh
 aws configure
@@ -44,7 +48,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
 ### MAC
 
 ```sh
-curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.29.3/2024-04-19/bin/darwin/amd64/kubectl
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.30.0/2024-05-12/bin/darwin/amd64/kubectl
 chmod +x ./kubectl
 mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
 echo 'export PATH=$HOME/bin:$PATH' >> ~/.zshrc
@@ -71,4 +75,5 @@ eksctl version
 
 ### reference
 
-https://docs.aws.amazon.com/ko_kr/emr/latest/EMR-on-EKS-DevelopmentGuide/setting-up-eksctl.html
+https://docs.aws.amazon.com/ko_kr/emr/latest/EMR-on-EKS-DevelopmentGuide/setting-up-eksctl.html  
+https://eksctl.io/installation/

@@ -126,6 +126,7 @@ export const awsEks = {
     {
       text: "EKS - Create Cluster using eksctl",
       base: "/aws/eks/create-cluster/",
+      collapsed: true,
       items: [
         {
           text: "Install CLI",
@@ -140,6 +141,33 @@ export const awsEks = {
           link: "create-cluster",
         },
       ],
+    },
+    {
+      text: "Kubernetes basics",
+      link: "kubernetes-basics/",
+    },
+    {
+      text: "Troubleshooting",
+      base: "/aws/eks/troubleshooting/",
+      collapsed: true,
+      items: [
+        {
+          text: "m1에서 docker build 시",
+          link: "docker-build-error",
+        },
+      ],
+    },
+  ],
+};
+
+export const awsEcr = {
+  text: "ECR",
+  base: "/aws/ecr/",
+  collapsed: true,
+  items: [
+    {
+      text: "Create Repository",
+      link: "create-repository",
     },
   ],
 };
