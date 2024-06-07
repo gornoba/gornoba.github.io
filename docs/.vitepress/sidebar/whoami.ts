@@ -31,5 +31,9 @@ export const whoamiCompany = {
       text: "다중 요청건에 대한 방어",
       link: "nestjs-request-limit",
     },
+    {
+      text: "Certified Kubernetes Administrator",
+      link: "cka",
+    },
   ],
 };
