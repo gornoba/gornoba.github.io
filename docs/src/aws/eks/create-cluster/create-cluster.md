@@ -37,7 +37,7 @@ EC2 > 네트워크 및 보안 > 키 페어 > 키 페어 생성 > 이름 적고 �
 eksctl create nodegroup --cluster=eksnest \
                        --region=ap-northeast-2 \
                        --name=eksnest-ng-public1 \
-                       --node-type=t2.micro \
+                       --node-type=t3a.medium \
                        --nodes=2 \
                        --nodes-min=2 \
                        --nodes-max=4 \

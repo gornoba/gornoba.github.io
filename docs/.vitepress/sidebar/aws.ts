@@ -147,6 +147,10 @@ export const awsEks = {
       link: "kubernetes-basics/",
     },
     {
+      text: "Aws Storage",
+      base: "aws-storage/",
+    },
+    {
       text: "Troubleshooting",
       base: "/aws/eks/troubleshooting/",
       collapsed: true,
