@@ -148,7 +148,11 @@ export const awsEks = {
     },
     {
       text: "Aws Storage",
-      base: "aws-storage/",
+      link: "aws-storage/",
+    },
+    {
+      text: "Aws rds",
+      link: "rds/",
     },
     {
       text: "Troubleshooting",

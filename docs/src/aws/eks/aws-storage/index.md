@@ -58,10 +58,12 @@ https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
 
 ## EBS
 
-[Github Link]()
-https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/ebs-csi.html
+[Github Link](https://github.com/gornoba/eks-nest/tree/f848c3d785e92e1ce0a9da60d7e2c20e8d13db01/aws/storage/ebs)<br/>
+https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/ebs-csi.html<br/>
+https://github.com/kubernetes-sigs/aws-ebs-csi-driver/tree/master/examples/kubernetes<br/>
+프리티어인 t2.micro로 진행이 안되서 t3.medium으로 노드그룹을 다시 만들고 진행하였습니다.
 
-## IAM 역할 설정
+### IAM 역할 설정
 
 ```sh
 eksctl create iamserviceaccount \
@@ -74,8 +76,130 @@ eksctl create iamserviceaccount \
     --approve
 ```
 
-## EBS CSI 드라이버 추가
+### EBS CSI 드라이버 추가
 
 ```sh
 eksctl create addon --name aws-ebs-csi-driver --cluster <cluster-name> --service-account-role-arn arn:aws:iam::<role-number>:role/AmazonEKS_EBS_CSI_DriverRole --force
 ```
+
+### Storage Class
+
+```yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ebs-sc
+provisioner: ebs.csi.aws.com
+volumeBindingMode: WaitForFirstConsumer
+reclaimPolicy: Delete
+allowVolumeExpansion: true
+parameters:
+  type: gp3
+  fsType: ext4
+  encrypted: "true"
+  kmsKeyId: arn:aws:kms:us-west-2:123456789012:key/abcd1234-a123-456a-a12b-a123b4cd56ef
+  iopsPerGiB: "3"
+  throughputPerGiB: "125"
+allowedTopologies:
+  - matchLabelExpressions:
+      - key: topology.ebs.csi.aws.com/zone
+        values:
+          - ap-northeast-2a
+          - ap-northeast-2b
+```
+
+#### volumeBindingMode
+
+PV가 바인딩될 시점을 지정합니다.
+
+- Immediate: PVC가 생성되면 즉시 PV를 바인딩합니다.
+- WaitForFirstConsumer: PVC가 Pod에 바인딩될 때까지 대기합니다.
+
+#### reclaimPolicy
+
+PVC가 삭제된 후 PV를 어떻게 처리할지를 지정합니다.
+
+- Retain: PV를 유지합니다.
+- Delete: PV를 삭제합니다.
+
+#### allowVolumeExpansion
+
+PV의 크기를 확장할 수 있는지 여부를 지정합니다.
+
+#### type
+
+- gp2: General Purpose SSD (이전 세대)
+- gp3: General Purpose SSD (최신 세대, 기본값)
+- io1: Provisioned IOPS SSD
+- sc1: Cold HDD
+- st1: Throughput Optimized HDD
+- standard: Magnetic
+
+#### fsType
+
+EBS 볼륨이 파일 시스템으로 포맷될 때 사용되는 파일 시스템 유형을 지정합니다.  
+이는 PV가 Pod에 마운트될 때 파일 시스템이 자동으로 포맷되고, 마운트되는 방식을 결정합니다.
+
+- ext4: 리눅스에서 가장 널리 사용되는 파일 시스템 유형 중 하나로, 일반적인 용도로 적합합니다.
+- xfs: 대용량 데이터베이스와 같이 고성능이 요구되는 경우 사용됩니다.
+- 그 외 btrfs, ext3 등 다른 파일 시스템 유형도 지정할 수 있습니다.
+
+#### encrypted, kmsKeyId
+
+EBS 볼륨을 암호화할지 여부를 지정합니다.  
+EBS 볼륨 암호화에 사용할 KMS (Key Management Service) 키의 ID를 지정합니다.
+
+#### iopsPerGiB
+
+IOPS(Input/Output Operations Per Second) 성능을 지정하는 옵션 gp3 또는 io1 볼륨에만 해당됩니다.
+
+- GiB당 제공될 IOPS 수를 지정합니다.
+- EBS gp3 볼륨은 기본적으로 GiB당 3 IOPS를 제공합니다.
+- IOPS 성능은 특정 용량 이상에서만 적용되며, 성능을 높일수록 비용이 증가합니다.
+
+#### throughputPerGiB
+
+gp3 볼륨에 대해 GiB당 스루풋 (Throughput)을 지정합니다.
+
+- GiB당 제공될 스루풋을 지정합니다.
+- 스루풋은 볼륨이 데이터를 전송할 수 있는 속도를 의미합니다.
+- gp3 볼륨은 기본적으로 GiB당 125 MiB/s의 스루풋을 제공합니다.
+
+#### allowedTopologies
+
+토폴로지 키와 값을 매칭하여 PV가 해당 토폴로지에서만 프로비저닝되도록 제한합니다.
+
+## EFS
+
+[Github Link](https://github.com/gornoba/eks-nest/tree/b2fd0d6512f454c18e81fb8fc7ae949ea7cf5b6a/aws/storage/efs)<br/>
+https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/efs-csi.html<br/>
+https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes
+
+### IAM
+
+```sh
+export cluster_name=eksnest
+export role_name=AmazonEKS_EFS_CSI_DriverRole
+eksctl create iamserviceaccount \
+    --name efs-csi-controller-sa \
+    --namespace kube-system \
+    --cluster $cluster_name \
+    --role-name $role_name \
+    --role-only \
+    --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEFSCSIDriverPolicy \
+    --approve
+TRUST_POLICY=$(aws iam get-role --role-name $role_name --query 'Role.AssumeRolePolicyDocument' | \
+    sed -e 's/efs-csi-controller-sa/efs-csi-*/' -e 's/StringEquals/StringLike/')
+aws iam update-assume-role-policy --role-name $role_name --policy-document "$TRUST_POLICY"
+```
+
+### EFS CSI 드라이버 추가
+
+공식문서 가보면 console에서 추가라하고 권장합니다. 시키는데로 해봅시다.  
+EKS > 클러스터 > 클러스터 이름 클릭 > 추가기능 > Amazon EFS CSI 드라이버 선택 > 위에서 만든 IAM 역할 선택, VPC는 EKS의 VPC 선택 > 생성
+
+### 보안그룹추가
+
+EC2 > 보안 그룹 > 보안 그룹 생성  
+이름 원하는것을 기재하고 VPC를 EKS가 생성되면서 만들어진 VPC 선택, 인바운드 규칙은 유형은 NFS, 소스는 VPC의 IPv4 CIDR를 기재해준다. IPv4 CIDR는 VPC를 가면 확인할 수 있다.  
+이후 EFS > 만든 EFS 선택 > 네트워크 액세스를 들어가서 만든 보안그룹을 선택하고 저장해준다. 2개,3개가 있으면 모두 선택해야 한다.
