@@ -43,6 +43,7 @@ code build는 위에서 만든거 설정해주고 code deploy는 넘어 갑니�
 ## 두번쨰 해결방법 docker buildx
 
 ```sh
+docker buildx create --name multi-arch-builder --driver docker-container --bootstrap --use
 docker buildx build --platform linux/amd64 --push
 ```
 

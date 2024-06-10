@@ -147,12 +147,23 @@ export const awsEks = {
       link: "kubernetes-basics/",
     },
     {
-      text: "Aws Storage",
+      text: "Eks Storage",
       link: "aws-storage/",
     },
     {
-      text: "Aws rds",
+      text: "Eks rds",
       link: "rds/",
+    },
+    {
+      text: "Eks Load Balancer",
+      base: "/aws/eks/load-balancer/",
+      collapsed: true,
+      items: [
+        {
+          text: "Classic and Network LoadBalancers",
+          link: "classic-and-network-loadbalancers",
+        },
+      ],
     },
     {
       text: "Troubleshooting",
