@@ -163,7 +163,15 @@ export const awsEks = {
           text: "Classic and Network LoadBalancers",
           link: "classic-and-network-loadbalancers",
         },
+        {
+          text: "Application Load Balancer",
+          link: "application-loadbalancer",
+        },
       ],
+    },
+    {
+      text: "Monitoring",
+      link: "monitoring/",
     },
     {
       text: "Troubleshooting",
