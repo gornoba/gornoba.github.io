@@ -196,6 +196,11 @@ export default defineConfig({
               vitepressExpose,
             ],
           },
+          {
+            text: "Flutter",
+            collapsed: true,
+            items: [],
+          },
         ],
       },
       {
