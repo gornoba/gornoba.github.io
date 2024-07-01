@@ -61,6 +61,7 @@ import {
   quasarVueDirectives,
   quasrStyleIdentity,
 } from "./sidebar/quasar";
+import { redash } from "./sidebar/redash";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -241,6 +242,12 @@ export default defineConfig({
             text: "Docker",
             collapsed: true,
             items: [dockerStart],
+          },
+          {
+            text: "redash",
+            base: "/redash/",
+            collapsed: true,
+            items: redash,
           },
         ],
       },
