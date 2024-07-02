@@ -62,6 +62,7 @@ import {
   quasrStyleIdentity,
 } from "./sidebar/quasar";
 import { redash } from "./sidebar/redash";
+import { dart, flutterSetting, flutterWidget } from "./sidebar/flutter";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -199,7 +200,7 @@ export default defineConfig({
           {
             text: "Flutter",
             collapsed: true,
-            items: [],
+            items: [dart, flutterSetting, flutterWidget],
           },
         ],
       },
