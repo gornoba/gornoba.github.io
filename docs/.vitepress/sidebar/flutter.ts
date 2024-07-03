@@ -44,5 +44,38 @@ export const flutterWidget = {
       text: "Text, Image, Icon",
       link: "text-image-icon",
     },
+    {
+      text: "ElevatedButton",
+      link: "elevatedbutton",
+    },
+    {
+      text: "ListView",
+      link: "listview",
+    },
+    {
+      text: "TextField",
+      link: "textfield",
+    },
   ],
+};
+
+export const flutterState = {
+  text: "state",
+  base: "/flutter/state/",
+  collapsed: true,
+  items: [
+    {
+      text: "SetState",
+      link: "setstate",
+    },
+    {
+      text: "ValueNotifier",
+      link: "valuenotifier",
+    },
+  ],
+};
+
+export const flutterNavigator = {
+  text: "route",
+  link: "/flutter/navigator/",
 };
