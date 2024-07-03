@@ -136,7 +136,7 @@ class _MyAppState extends State<MyApp> {
 ```
 
 - BottomNavigationBar를 사용하여 세 개의 탭을 정의합니다.
-- onTap 콜백에서 선택된 인덱스를 업데이트하고, \_widgetOptions 배열에서 해당하는 화면을 표시합니다.
+- onTap 콜백에서 선택된 인덱스를 업데이트하고, `_widgetOptions` 배열에서 해당하는 화면을 표시합니다.
 
 ## 탭 바 (TabBar)
 

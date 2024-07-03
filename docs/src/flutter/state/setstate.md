@@ -75,14 +75,14 @@ class _CounterWidgetState extends State<CounterWidget> {
    CounterWidget 클래스는 StatefulWidget을 확장합니다.
    createState 메서드는 상태를 반환합니다.
 2. 상태 클래스 생성
-   \_CounterWidgetState 클래스는 State<CounterWidget>을 확장합니다.
-   상태 변수 \_counter를 정의합니다.
+   `_CounterWidgetState` 클래스는 State`<CounterWidget>`을 확장합니다.
+   상태 변수 `_counter`를 정의합니다.
 3. 상태 업데이트
-   \_incrementCounter 메서드에서 setState를 호출하여 \_counter 변수를 업데이트합니다.
+   `_incrementCounter` 메서드에서 setState를 호출하여 `_counter` 변수를 업데이트합니다.
    setState는 내부적으로 호출된 후 build 메서드를 다시 실행하여 UI를 업데이트합니다.
 4. UI 빌드
    build 메서드에서 현재 상태를 기반으로 UI를 구성합니다.
-   \_counter 변수를 사용하여 텍스트를 업데이트합니다.
+   `_counter` 변수를 사용하여 텍스트를 업데이트합니다.
 
 ## 주의사항
 
