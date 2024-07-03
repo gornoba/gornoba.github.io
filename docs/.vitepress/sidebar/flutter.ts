@@ -36,5 +36,13 @@ export const flutterWidget = {
       text: "Column, Row, Expanded",
       link: "column-row-expanded",
     },
+    {
+      text: "Container, SizedBox",
+      link: "container-sidzedbox",
+    },
+    {
+      text: "Text, Image, Icon",
+      link: "text-image-icon",
+    },
   ],
 };
