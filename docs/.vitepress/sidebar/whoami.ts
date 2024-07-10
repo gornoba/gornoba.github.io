@@ -11,6 +11,10 @@ export const whoamiCompany = {
   collapsed: true,
   items: [
     {
+      text: "Chat GPT와 대화",
+      link: "chat-gpt",
+    },
+    {
       text: "GCP에서 AWS로 서비스 이전",
       base: "/whoiam/company/gcp-to-aws/",
       link: "gcp-to-aws",
