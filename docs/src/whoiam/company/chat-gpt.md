@@ -200,34 +200,109 @@ NestJS의 예외 필터를 사용하여 일관된 방식으로 예외를 처리�
 
 ### 주요 개념
 
-1. 도메인 (Domain)
-
-- 특정 비즈니스나 활동 영역을 나타냅니다. 예를 들어, 은행, 전자 상거래, 의료 등이 도메인이 될 수 있습니다.
-
-2. 도메인 모델 (Domain Model)
-
-- 도메인의 개념과 관계를 표현한 추상화된 모델입니다. 도메인 모델은 도메인의 핵심 개념을 반영하여 객체와 그들의 상호작용을 정의합니다.
-
-3. 유비쿼터스 언어 (Ubiquitous Language)
-
-- 도메인 전문가와 개발자가 공통적으로 이해할 수 있는 언어를 사용하여 의사소통하는 것을 의미합니다. 이는 소스 코드, 문서, 대화 등에서 일관되게 사용됩니다.
-
-4. 바운디드 컨텍스트 (Bounded Context)
-
-- 도메인 모델을 논리적으로 구분한 경계입니다. 각 바운디드 컨텍스트는 고유한 도메인 모델을 가지며, 다른 컨텍스트와의 상호작용은 명확하게 정의됩니다.
+도메인 주도 설계(DDD, Domain-Driven Design)는 소프트웨어 개발 방법론 중 하나로, 복잡한 소프트웨어 시스템을 효과적으로 개발하기 위한 접근 방식입니다. 이 방법론은 소프트웨어의 설계와 구현을 비즈니스 도메인(즉, 소프트웨어가 해결하려는 문제 영역)의 관점에서 중심으로 삼습니다.
 
 ### 구성 요소
 
-1. 엔티티 (Entity)
-   고유 식별자를 가지며, 동일성을 기준으로 식별되는 객체입니다. 예를 들어, User, Order 등이 엔티티입니다.
-2. 값 객체 (Value Object)
-   고유 식별자가 없으며, 속성 값으로만 구별되는 객체입니다. 불변성을 가지며, 동일한 속성 값을 가지면 동일한 것으로 간주됩니다. 예를 들어, Money, Address 등이 값 객체입니다.
-3. 서비스 (Service)
-   특정 도메인 로직을 수행하는 객체입니다. 엔티티나 값 객체가 아닌 작업을 캡슐화합니다.
-4. 리포지토리 (Repository)
-   엔티티의 영속성을 관리하는 객체입니다. 데이터베이스와 도메인 모델 간의 상호작용을 처리합니다.
-5. 애그리게이트 (Aggregate)
-   엔티티와 값 객체를 그룹화한 집합입니다. 애그리게이트는 단일 단위로 트랜잭션을 처리하며, 루트 엔티티(애그리게이트 루트)를 통해서만 접근 가능합니다.
+1. 도메인(Domain)
+
+   소프트웨어가 해결하고자 하는 특정 비즈니스나 문제 영역입니다. 예를 들어, 온라인 쇼핑몰이라면 쇼핑, 결제, 배송 등이 도메인이 될 수 있습니다.
+
+   - 환자 관리 도메인
+   - 의사 관리 도메인
+   - 예약 관리 도메인
+   - 진료 기록 도메인
+
+2. 유비쿼터스 언어(Ubiquitous Language)
+
+   개발자와 비즈니스 전문가가 동일한 언어로 소통할 수 있도록 공통된 용어를 사용합니다. 이를 통해 오해를 줄이고, 요구사항을 명확하게 이해할 수 있습니다.
+
+   - 환자(Patient)
+   - 의사(Doctor)
+   - 예약(Appointment)
+   - 진료 기록(Medical Record)
+
+3. 엔티티(Entity)
+
+   고유한 식별자를 가지는 객체입니다. 예를 들어, 사용자는 이름이나 이메일 주소로 식별될 수 있습니다.
+
+   - **Patient**: 환자 ID, 의료 기록 번호
+   - **Doctor**: 의사 ID, 전문 분야
+   - **Appointment**: 예약 ID, 예약 날짜, 환자와 의사 정보
+
+4. 밸류 오브젝트(Value Object)
+
+   식별자가 필요 없는 객체로, 불변성을 갖는 속성입니다. 예를 들어, 주소는 도로명, 우편번호 등으로 구성된 밸류 오브젝트입니다.
+
+   - **Address**: 도로명, 우편번호 등
+   - **ContactInfo**: 전화번호, 이메일 주소
+
+5. 애그리거트(Aggregate)
+
+   엔티티와 밸류 오브젝트를 그룹화한 개념으로, 트랜잭션의 일관성을 유지하기 위해 하나의 단위로 취급됩니다. 예를 들어, 주문 애그리거트는 주문 항목, 결제 정보 등을 포함할 수 있습니다.
+
+   - Patient 애그리거트
+
+     - **Patient 엔티티**: 환자 ID, 이름, 생년월일
+     - **MedicalRecord 밸류 오브젝트**: 진료 기록, 병력, 알레르기 정보
+
+   - Appointment 애그리거트
+     - **Appointment 엔티티**: 예약 ID, 예약 날짜, 시간
+     - **Patient 엔티티**: 환자 정보
+     - **Doctor 엔티티**: 의사 정보
+
+6. 리포지토리(Repository)
+
+   도메인 객체를 저장하고 검색하는 역할을 합니다. 데이터베이스에 접근하는 로직을 캡슐화하여 도메인 로직과 분리합니다.
+
+   - **PatientRepository**: 환자 저장 및 검색
+   - **DoctorRepository**: 의사 저장 및 검색
+   - **AppointmentRepository**: 예약 저장 및 검색
+
+7. 서비스(Service)
+
+   도메인 로직을 캡슐화한 애플리케이션 서비스로, 엔티티나 밸류 오브젝트에 속하지 않는 로직을 처리합니다.
+
+   - **AppointmentService**:
+   - `scheduleAppointment(patientId, doctorId, dateTime)`: 예약 생성 로직
+   - `cancelAppointment(appointmentId)`: 예약 취소 로직
+
+8. 도메인 이벤트(Domain Event)
+
+   도메인 내에서 일어나는 중요한 사건을 나타내며, 이를 통해 시스템 간의 상호작용을 처리합니다. 예를 들어, 주문이 생성되면 '주문 생성됨' 이벤트가 발생할 수 있습니다.
+
+   - **AppointmentScheduledEvent**: 예약 생성 이벤트
+   - **AppointmentCanceledEvent**: 예약 취소 이벤트
+
+9. 바운디드 컨텍스트(Bounded Context)
+
+   도메인을 명확하게 구분된 경계로 나누어 각 컨텍스트 내에서 독립적으로 설계하고 개발합니다. 예를 들어, 사용자 관리, 주문 처리, 상품 관리 등의 컨텍스트가 있을 수 있습니다.
+
+   - **PatientContext**: 환자 관리
+   - **DoctorContext**: 의사 관리
+   - **AppointmentContext**: 예약 관리
+   - **MedicalRecordContext**: 진료 기록 관리
+
+### 예시 시나리오
+
+1. **환자 등록**:
+
+   - `PatientContext`에서 `Patient` 엔티티를 생성하고 `PatientRepository`에 저장
+
+2. **예약 생성**:
+
+   - `AppointmentContext`의 `AppointmentService`가 호출
+   - `AppointmentService`는 `Appointment` 엔티티를 생성하고 `AppointmentRepository`에 저장
+   - `AppointmentScheduledEvent` 발생
+
+3. **진료 기록 업데이트**:
+
+   - `MedicalRecordContext`에서 `MedicalRecord` 밸류 오브젝트를 업데이트
+   - `MedicalRecordUpdatedEvent` 발생
+
+4. **예약 취소**:
+   - `AppointmentContext`의 `AppointmentService`의 `cancelAppointment` 메서드 호출
+   - `AppointmentCanceledEvent` 발생
 
 ### DDD의 장점
 
@@ -1152,3 +1227,44 @@ CREATE INDEX idx_trgm ON table_name USING gin(column_name gin_trgm_ops);
 CREATE EXTENSION pg_bigm;
 CREATE INDEX idx_bigm ON table_name USING gin(column_name gin_bigm_ops);
 ```
+
+## Javascript의 싱글 스레드 기반의 비동기 이벤트 루프 모델을 설명하세요.
+
+1. 콜 스택(Call Stack)
+   콜 스택은 자바스크립트 코드가 실행되는 순서를 저장하는 LIFO(Last In, First Out) 구조의 스택입니다. 함수가 호출되면 콜 스택에 쌓이고, 실행이 끝나면 스택에서 제거됩니다.
+
+2. 힙(Heap)
+   힙은 동적으로 할당된 메모리들이 저장되는 공간입니다. 객체와 같은 큰 데이터들은 힙에 저장됩니다.
+
+3. 큐(Queue)
+   자바스크립트는 메시지 큐(Message Queue)를 통해 비동기 작업을 처리합니다. 비동기 작업(예: 타이머, 네트워크 요청)이 완료되면 콜백 함수가 메시지 큐에 추가됩니다.
+
+4. 이벤트 루프(Event Loop)
+   이벤트 루프는 콜 스택과 메시지 큐를 모니터링하며 콜 스택이 비어 있는 경우 메시지 큐에서 콜백을 꺼내 콜 스택에 넣어 실행합니다.
+
+5. 마이크로태스크 큐(Microtask Queue)
+   자바스크립트는 메시지 큐 외에도 마이크로태스크 큐를 가지고 있습니다. 마이크로태스크는 주로 Promise와 같은 비동기 작업에서 사용됩니다. 마이크로태스크는 현재 실행 중인 작업이 끝난 후 바로 실행됩니다.
+
+### 예시
+
+```javascript
+console.log("동기 코드 시작");
+
+setTimeout(() => {
+  console.log("setTimeout");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("Promise");
+});
+
+console.log("동기 코드 끝");
+```
+
+1. first()가 호출되어 콜 스택에 추가됩니다.
+2. console.log('first')가 실행되어 'first'를 출력합니다.
+3. second()가 호출되어 콜 스택에 추가됩니다.
+4. console.log('second')가 실행되어 'second'를 출력합니다.
+5. second() 실행이 끝나고 콜 스택에서 제거됩니다.
+6. console.log('first again')가 실행되어 'first again'을 출력합니다.
+7. first() 실행이 끝나고 콜 스택에서 제거됩니다.
