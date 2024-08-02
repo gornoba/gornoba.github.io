@@ -1286,3 +1286,11 @@ console.log("동기 코드 끝");
 5. second() 실행이 끝나고 콜 스택에서 제거됩니다.
 6. console.log('first again')가 실행되어 'first again'을 출력합니다.
 7. first() 실행이 끝나고 콜 스택에서 제거됩니다.
+
+## NestJs의 IOC(Inversion of Control)은 무엇인가?
+
+NestJS의 IoC(Inversion of Control, 제어의 역전)은 프레임워크의 핵심 개념 중 하나로, 의존성 주입(Dependency Injection)을 통해 객체 간의 결합도를 낮추고, 코드의 재사용성과 테스트 용이성을 높여줍니다. NestJS는 Angular의 의존성 주입 시스템을 모델로 하여, 애플리케이션의 구성 요소를 효율적으로 관리합니다. 다음은 NestJS에서 IoC가 어떻게 작동하는지 설명합니다.
+
+### IoC(Inversion of Control)의 기본 개념
+
+IoC는 객체의 생성 및 생명 주기를 개발자가 아닌 프레임워크가 관리하도록 하는 디자인 패턴입니다. 이를 통해 객체 간의 강한 결합도를 피하고, 더 유연하고 테스트 가능한 코드를 작성할 수 있습니다.
