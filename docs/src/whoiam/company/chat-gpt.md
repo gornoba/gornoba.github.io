@@ -1279,13 +1279,17 @@ Promise.resolve().then(() => {
 console.log("동기 코드 끝");
 ```
 
-1. first()가 호출되어 콜 스택에 추가됩니다.
-2. console.log('first')가 실행되어 'first'를 출력합니다.
-3. second()가 호출되어 콜 스택에 추가됩니다.
-4. console.log('second')가 실행되어 'second'를 출력합니다.
-5. second() 실행이 끝나고 콜 스택에서 제거됩니다.
-6. console.log('first again')가 실행되어 'first again'을 출력합니다.
-7. first() 실행이 끝나고 콜 스택에서 제거됩니다.
+1. `console.log("동기 코드 시작");`
+   이 줄은 동기 코드로 바로 실행됩니다. 따라서 콘솔에 "동기 코드 시작"이 출력됩니다.
+
+2. `setTimeout(() => { console.log("setTimeout"); }, 0);`
+   이 줄은 비동기 코드입니다. setTimeout 함수는 콜백 함수를 이벤트 큐에 추가하지만, 바로 실행되지는 않습니다. 0ms의 딜레이를 설정했지만, 자바스크립트의 이벤트 루프에 의해 콜백 함수는 다음 틱(tick)에 실행됩니다.
+
+3. `Promise.resolve().then(() => { console.log("Promise"); });`
+   이 줄도 비동기 코드입니다. 프로미스는 마이크로태스크 큐에 추가됩니다. 마이크로태스크는 이벤트 루프가 현재 실행 중인 작업을 완료한 후 즉시 실행됩니다.
+
+4. `console.log("동기 코드 끝");`
+   이 줄은 동기 코드로 바로 실행됩니다. 따라서 콘솔에 "동기 코드 끝"이 출력됩니다.
 
 ## NestJs의 IOC(Inversion of Control)은 무엇인가?
 
